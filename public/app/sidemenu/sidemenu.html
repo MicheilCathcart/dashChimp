@@ -1,0 +1,25 @@
+<div class="side-menu">
+
+	<a ui-sref="dashboard({ id: dashboard.id, title: dashboard.title,  })" ng-repeat="dashboard in createdDashboards">
+	<div class="dashboard-link" >
+		<div class="dashboard-thumb">
+			<img ng-src="{{ dashboard.thumbnailURL }}" alt="{{ dashboard.title }}">
+		</div>
+		<div class="dashboard-title">
+			{{ dashboard.title }}
+		</div>
+	</div>
+	</a>
+	
+	<a ui-sref="newDashboard">
+	<div class="dashboard-link">
+		<div class="dashboard-new-icon">
+			<div class="plus">+</div>
+		</div>
+		<div class="dashboard-title">
+			New Dashboard
+		</div>
+	</div>
+	</a>
+	
+</div>

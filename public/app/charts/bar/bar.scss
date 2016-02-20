@@ -1,0 +1,129 @@
+
+// Imports
+
+@import '../../variables';
+@import '../../mixins';
+
+// Bar Chart
+
+.bar-chart {
+	height: 600px;
+	.chart {
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+		@include vertical-align();
+		.bar {
+			position: relative;
+			display:inline-block;
+			margin-right: 20px;
+			.heading {
+			position: absolute;
+			margin: 20px auto;
+			width: 52px;
+			left: 0;
+			font-size: 9px;
+			right: 0;
+			text-transform: uppercase;
+			text-align: center;
+			overflow: hidden;
+			text-overflow: ellipsis;
+				&.empty {
+				display: none;
+				}
+			}
+			&.empty {
+				height:0px;
+				overflow: hidden;
+				width: 0px;
+				margin-right: 0px;
+			}
+			&:last-child {
+				margin-right: 0px;	
+			}
+			.bar-left {
+				float:left;
+				width: 25px;
+				-webkit-transform: skewY(15deg);
+				-moz-transform: skewY(15deg);
+				-o-transform: skewY(15deg);
+
+			}
+			.bar-right {
+				float:left;
+				width: 25px;
+				-webkit-transform: skewY(-15deg);
+				-moz-transform: skewY(-15deg);
+				-o-transform: skewY(-15deg);
+			}
+			.bar-top {
+			width: 0;
+			height: 0;
+			left: -1px;
+			border: 26px solid transparent;
+			position: absolute;
+			top: -36px;
+				&:after {
+				content: '';
+				position: absolute;
+				left: -25px;
+				top: 7px;
+				width: 0;
+				height: 0;
+				border: 25px solid transparent;
+				}
+			}
+			
+		// Generate Bar Colours
+	
+		$alphabet: (
+		'A': $graph1, 
+		'B': $graph2, 
+		'C': $graph3,
+		'D': $graph4,
+		'E': $graph5,
+		'F': $graph6,
+		'G': $graph7,
+		'H': $graph8,
+		'I': $graph9,
+		'J': $graph10,
+		'K': $graph11,
+		'L': $graph12,
+		'M': $graph13,
+		'N': $graph14,
+		'O': $graph15,
+		'P': $graph16,
+		'Q': $graph17,
+		'R': $graph18,
+		'S': $graph19,
+		'T': $graph20,
+		'U': $graph21,
+		'V': $graph22,
+		'W': $graph23,
+		'X': $graph24,
+		'Y': $graph25,
+		'Z': $graph26	
+		);
+	
+		@each $letter, $color in $alphabet {
+			&.#{$letter} {
+				.bar-left {
+					background-color: $color;
+				}
+				.bar-right {
+					background-color: lighten($color,10);
+				}
+				.bar-top {
+					border-bottom: 7px solid lighten($color,20);
+					&:after {
+						border-top: 7px solid lighten($color,20);
+					}
+				}
+			}
+		}	
+			
+		}
+		
+	}
+}
+

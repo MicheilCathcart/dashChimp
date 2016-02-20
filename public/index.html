@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Dashchimp</title>
+    <base href="/index.html">
+
+    <!-- Style sheets -->
+    <link href="css/app.css" rel="stylesheet"/>
+    <link href="css/dashboard.css" rel="stylesheet"/>
+    <link href="css/dashboard-header.css" rel="stylesheet"/>
+    <link href="css/bar.css" rel="stylesheet"/>
+    <link href="css/dataset.css" rel="stylesheet"/>
+    <link href="css/sidemenu.css" rel="stylesheet"/>
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+    
+    <!-- Angular -->
+    <script src="js/angular.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+    
+    <!-- D3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+    
+    <!-- LoDash -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.js"></script>
+    
+    <!-- Moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
+
+    <!-- App -->
+    <script src="app/angularApp.js"></script>
+    
+    <!-- Menus -->
+    <script src="app/sidemenu/sidemenu.js"></script>
+    
+    <!-- Charts -->
+    <script src="app/charts/bar/bar.js"></script>
+    
+    <!-- Dashboard -->
+    <script src="app/dashboard/dashboard.js"></script>
+    <script src="app/dashboard/dataset/dataset.js"></script>
+    <script src="app/dashboard/dashboard-header/dashboard-header.js"></script>
+    <script src="app/newDashboard/newDashboard.js"></script>
+    
+    <!-- Filters -->
+    <script src="app/dashboard/dataset/filters/alphabet-filter.js"></script>
+    
+    
+    
+</head>
+
+<header class="navbar">
+    <a href="/">
+	<img class="logo" src="images/dashchimp-logo.svg">
+    </a>
+    <div class="username pull-right">
+    <i class="fa fa-user fa-size-medium fa-right"></i>
+    </div>
+    <div class="username pull-right">
+        BUILDER BOB
+    </div>
+</header>
+
+<body>
+	
+    <side-menu></side-menu>
+    
+	<div class="ui-view">
+		<ui-view></ui-view>
+	</div>
+
+</body>
+
+</html> 

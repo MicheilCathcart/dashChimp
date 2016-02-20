@@ -1,0 +1,7 @@
+.dashboard {
+	height: 600px; 
+	overflow: hidden;
+	&.contracted {
+		height:0px;
+	}
+}

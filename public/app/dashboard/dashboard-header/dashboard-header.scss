@@ -1,0 +1,72 @@
+
+// Imports
+
+@import '../../variables';
+@import '../../mixins';
+
+// Header
+
+.dashboard-header {
+	height: 42px;
+	border-bottom: 1px solid $lineColour; 
+	
+	.header-button {
+		width: 76px;
+		height: 42px;
+		display: inline-block;
+		text-align: center;
+		border-right: 1px solid $lineColour;
+		text-transform: uppercase;
+		&.cog {
+			border-left: 1px solid $lineColour;
+		}
+		&.date-range {
+			width: 152px;
+			font-size: 9px;
+		}
+		&:hover {
+			background-color: $lightHover;
+			cursor: pointer;
+			border-bottom: 1px solid $lineColour; 
+		}
+	}
+	
+	.header-title {
+		height: 42px;
+		overflow:hidden;
+		width:430px;
+		text-align: left;
+		display: inline-block;
+		text-transform: uppercase;
+		&:hover {
+			background-color: $lightHover;
+			cursor: text;
+			border-bottom: 1px solid $lineColour; 
+			.title .edit {
+				color: $fontColour;
+			}
+		}
+		.title .edit {
+			position: absolute;
+    		right: 25px;
+    		top: 12px;
+			color: $chimpBackground;
+		}
+		.title input {
+			padding: 0px 25px;
+			height: 41px;
+			width: 100%;
+			text-transform: uppercase;
+			&:focus {
+				background-color: $lightHover;
+				& + .edit {
+				color: $chimpPrimary;
+				}
+			}
+			&:hover {
+				background-color: $lightHover;
+			}
+		}
+	}
+	
+}

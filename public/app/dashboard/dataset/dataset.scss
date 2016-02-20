@@ -1,0 +1,109 @@
+
+// Imports
+
+@import '../../variables';
+@import '../../mixins';
+
+// Dataset
+
+.dataset {
+	
+	.dataset-header {
+		cursor: pointer;
+		padding: 0px 25px;
+		background-color: $chimpHighlight;
+		width: 100%;
+		height: 42px;
+		font-size: 17px;
+		font-weight: 100;
+		color:$datasetHeaderColour;
+	}
+	
+	.expand {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	
+	.cell {
+		position:relative;
+		float:left;
+		height: 46px;
+		border-right: 1px solid $lineColour;
+		border-bottom: 1px solid $lineColour;
+		&.data-heading {
+			text-transform: uppercase;
+			background-color: $chimpLowlight;
+			&:focus {
+				background-color: $lightHover;
+			}
+		}
+		& input {
+			height: 100%;
+			&:focus {
+				background-color: $lightHover;
+				& + .cell-label {
+				color: $lineColour;
+				}
+			}
+		}
+		.cell-label {
+			position: absolute;
+			bottom:3px;
+			left:3px;
+			z-index: 1;
+			font-size: 7px;
+			color:$lineColour;
+		}
+	}
+	
+	// Generate Colour Lists
+	
+	$alphabet: (
+		'A': $graph1, 
+		'B': $graph2, 
+		'C': $graph3,
+		'D': $graph4,
+		'E': $graph5,
+		'F': $graph6,
+		'G': $graph7,
+		'H': $graph8,
+		'I': $graph9,
+		'J': $graph10,
+		'K': $graph11,
+		'L': $graph12,
+		'M': $graph13,
+		'N': $graph14,
+		'O': $graph15,
+		'P': $graph16,
+		'Q': $graph17,
+		'R': $graph18,
+		'S': $graph19,
+		'T': $graph20,
+		'U': $graph21,
+		'V': $graph22,
+		'W': $graph23,
+		'X': $graph24,
+		'Y': $graph25,
+		'Z': $graph26	
+	);
+	
+	.coloured {
+		@each $letter, $color in $alphabet {
+			&.#{$letter} {
+				color:white;
+				background-color: $color;
+					border-right: 1px solid lighten($color, 5);
+					&:focus {
+						background-color: lighten($color, 1);
+					}	
+			}
+		}
+	}
+	
+}
+
+	
+	
+
+

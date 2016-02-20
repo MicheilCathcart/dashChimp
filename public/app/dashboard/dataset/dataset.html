@@ -1,0 +1,30 @@
+<div class="dataset">
+	
+	<div class="dataset-header" ng-click="expanded = !expanded">
+		<div class="vertical-align">
+			DATA
+		</div>
+		
+		<!-- On Click, toggle expanded to false to set the class on the graph area -->
+		
+		<div class="pull-right expand">
+			<i ng-if="!expanded" class="fa fa-expand fa-size-small vertical-align"></i>
+			<i ng-if="expanded" class="fa fa-compress fa-size-small vertical-align"></i>
+		</div>
+	</div>
+	
+	<div class="data-row">
+		<div class="cell data-heading center date-heading" value="{{ nowTime }}" style="width: {{100 / dataHeadings.length + 1 }}%">DATE</div>
+		<input type="text" ng-if="$index + 1 != dataHeadings.length && $index + 1 != dataHeadings.length  - 1 " ng-model="headings.value" ng-class="{ coloured: headings.value }" ng-repeat-start="headings in dataHeadings" class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / dataHeadings.length + 1}}%;"/>
+		<input type="text" ng-if="$index + 1 == dataHeadings.length  - 1 " ng-change="removeColumn(headings.value)" ng-model-options="{ updateOn: 'blur', debounce: { 'blur': 0 } }" ng-model="headings.value" ng-class="{ coloured: headings.value }" class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / dataHeadings.length + 1}}%;"/>
+		<input type="text" ng-if="$index + 1 == dataHeadings.length" ng-change="addColumn(headings.value)" ng-model-options="{ updateOn: 'blur', debounce: {  'blur': 0 } }" ng-model="headings.value" ng-class="{ coloured: headings.value }" ng-repeat-end class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / dataHeadings.length + 1}}%;"/>
+	</div>
+	
+	<div ng-repeat="rows in dataset track by $index" class="data-row">
+		<div ng-repeat="cells in rows" class="cell" style="width: {{100 / dataHeadings.length }}%;">
+			<input type="number" ng-model="cells.value" class="center" ng-change="renderBars()" ng-model-options="{ updateOn: 'blur', debounce: {  'blur': 0 } }"/>
+			<div class="cell-label">{{ $index | alphabet }}{{ $parent.$index }}</div>
+		</div>
+	</div>
+	
+</div>

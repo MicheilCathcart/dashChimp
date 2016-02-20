@@ -1,0 +1,15 @@
+<div class="bar-chart">
+    
+<div class="chart animate">
+    
+    <div class="bar animate {{ $index | alphabet }}" ng-repeat="bar in dataset[0]" ng-class="{ empty: !bar.value }" style="height:{{ scaleX(bar.value) }}px">
+        <div class="animate bar-left" style="height:{{ scaleX(bar.value) }}px"></div>
+        <div class="animate bar-right" style="height:{{ scaleX(bar.value) }}px"></div>
+        <div class="animate bar-top"></div>
+        <div class="clearfix"></div>
+        <div class="heading">{{ dataHeadings[$index].value }}</div>
+    </div>
+  
+</div>
+	
+</div>

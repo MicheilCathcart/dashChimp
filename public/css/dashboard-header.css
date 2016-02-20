@@ -1,0 +1,49 @@
+/* Vertical Align */
+.dashboard-header {
+  height: 42px;
+  border-bottom: 1px solid #DDD5CF; }
+  .dashboard-header .header-button {
+    width: 76px;
+    height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-right: 1px solid #DDD5CF;
+    text-transform: uppercase; }
+    .dashboard-header .header-button.cog {
+      border-left: 1px solid #DDD5CF; }
+    .dashboard-header .header-button.date-range {
+      width: 152px;
+      font-size: 9px; }
+    .dashboard-header .header-button:hover {
+      background-color: #FFFFFF;
+      cursor: pointer;
+      border-bottom: 1px solid #DDD5CF; }
+  .dashboard-header .header-title {
+    height: 42px;
+    overflow: hidden;
+    width: 430px;
+    text-align: left;
+    display: inline-block;
+    text-transform: uppercase; }
+    .dashboard-header .header-title:hover {
+      background-color: #FFFFFF;
+      cursor: text;
+      border-bottom: 1px solid #DDD5CF; }
+      .dashboard-header .header-title:hover .title .edit {
+        color: #8D6647; }
+    .dashboard-header .header-title .title .edit {
+      position: absolute;
+      right: 25px;
+      top: 12px;
+      color: #F9F9F9; }
+    .dashboard-header .header-title .title input {
+      padding: 0px 25px;
+      height: 41px;
+      width: 100%;
+      text-transform: uppercase; }
+      .dashboard-header .header-title .title input:focus {
+        background-color: #FFFFFF; }
+        .dashboard-header .header-title .title input:focus + .edit {
+          color: #8D6647; }
+      .dashboard-header .header-title .title input:hover {
+        background-color: #FFFFFF; }

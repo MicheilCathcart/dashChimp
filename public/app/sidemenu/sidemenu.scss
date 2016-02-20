@@ -1,0 +1,60 @@
+
+// Imports
+
+@import '../variables';
+@import '../mixins';
+
+// Side Menu
+
+.side-menu {
+	
+    background-color: $chimpDark;
+	position: fixed;
+	left: 0;
+	top: $navbarHeight;
+	min-height: 100vh;
+	height: 100vh; 
+	width: $sideMenuWidth;
+	padding: $desktopPadding; 
+	
+	.dashboard-link {
+		position: relative;
+		background-color: $chimpLowlight;
+		height: $dashboardLinkHeight;
+		text-align: center;
+		padding: 8px; 
+		margin-bottom: 25px; 
+		&:hover {
+			background-color: $lightHover;
+			cursor: pointer;
+		}
+	}
+	.dashboard-thumb {
+		margin-top:15px;
+	}
+	
+	.dashboard-title {
+		font-size: 11px;
+    	position: absolute;
+    	bottom: 18px;
+    	width: 85%;
+    	margin: 0 auto;
+    	left: 0;
+    	right: 0;
+	}
+	
+	.dashboard-new-icon {
+		width: 52px;
+		height: 52px;
+		background-color: $chimpPrimary;
+		margin: 28px auto;
+		@include border-radius(50%);
+		.plus {
+			@include vertical-align();
+			margin-top:-3px;
+			font-size: 30px;
+			color:white;
+		}
+	}
+	
+}
