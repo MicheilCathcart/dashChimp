@@ -5,7 +5,7 @@ var express = require('express'),
 // 
 // To start:
 // Navigate to the projects folder using command line/terminal
-// Type "gulp"
+// Type "gulp", testing bitbucket
 // Dashchimp will run on port:8000
 // In your browser go to localhost:8000 
 // 
