@@ -15,9 +15,9 @@ var module = angular.module('app.dashboard');
             if (input !== null ) {
             
             _(dataNames).forEach(function(dataName, index) {
-                var inString = newString.indexOf(dataName);
+                var inString = newString.indexOf(dataName.toUpperCase());
                 if (inString > -1 ) {
-                    newString = newString.slice(0, inString) + "<span class='syntax " + alphabet[index] + "'>" + dataName + "</span>" + newString.slice(inString + dataName.length);
+                    newString = newString.slice(0, inString) + "<span class='syntax " + alphabet[index] + "'>" + dataName.toUpperCase() + "</span>" + newString.slice(inString + dataName.length);
                 }
             });
             
