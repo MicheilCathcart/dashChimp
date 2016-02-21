@@ -31,6 +31,7 @@
 	
 	.cell {
 		position:relative;
+        background-color:$cellBackground;
 		float:left;
 		height: 46px;
 		border-right: 1px solid $lineColour;

@@ -16,6 +16,7 @@
     cursor: pointer; }
   .dataset .cell {
     position: relative;
+    background-color: #F1F1F0;
     float: left;
     height: 46px;
     border-right: 1px solid #C2B1A4;
