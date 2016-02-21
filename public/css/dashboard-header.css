@@ -1,23 +1,23 @@
 /* Vertical Align */
 .dashboard-header {
   height: 42px;
-  border-bottom: 1px solid #DDD5CF; }
+  border-bottom: 1px solid #C2B1A4; }
   .dashboard-header .header-button {
     width: 76px;
     height: 42px;
     display: inline-block;
     text-align: center;
-    border-right: 1px solid #DDD5CF;
+    border-right: 1px solid #C2B1A4;
     text-transform: uppercase; }
     .dashboard-header .header-button.cog {
-      border-left: 1px solid #DDD5CF; }
+      border-left: 1px solid #C2B1A4; }
     .dashboard-header .header-button.date-range {
       width: 152px;
       font-size: 9px; }
     .dashboard-header .header-button:hover {
       background-color: #FFFFFF;
       cursor: pointer;
-      border-bottom: 1px solid #DDD5CF; }
+      border-bottom: 1px solid #C2B1A4; }
   .dashboard-header .header-title {
     height: 42px;
     overflow: hidden;
@@ -28,7 +28,7 @@
     .dashboard-header .header-title:hover {
       background-color: #FFFFFF;
       cursor: text;
-      border-bottom: 1px solid #DDD5CF; }
+      border-bottom: 1px solid #C2B1A4; }
       .dashboard-header .header-title:hover .title .edit {
         color: #8D6647; }
     .dashboard-header .header-title .title .edit {

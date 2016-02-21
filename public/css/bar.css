@@ -62,210 +62,210 @@
           height: 0;
           border: 25px solid transparent; }
       .bar-chart .chart .bar.A .bar-left {
-        background-color: #1B5662; }
+        background-color: #40B5C9; }
       .bar-chart .chart .bar.A .bar-right {
-        background-color: #26798a; }
+        background-color: #68c4d4; }
       .bar-chart .chart .bar.A .bar-top {
-        border-bottom: 7px solid #319cb2; }
+        border-bottom: 7px solid #90d4df; }
         .bar-chart .chart .bar.A .bar-top:after {
-          border-top: 7px solid #319cb2; }
+          border-top: 7px solid #90d4df; }
       .bar-chart .chart .bar.B .bar-left {
-        background-color: #158079; }
+        background-color: #B1CE1C; }
       .bar-chart .chart .bar.B .bar-right {
-        background-color: #1caca2; }
+        background-color: #c8e439; }
       .bar-chart .chart .bar.B .bar-top {
-        border-bottom: 7px solid #23d8cc; }
+        border-bottom: 7px solid #d5ea66; }
         .bar-chart .chart .bar.B .bar-top:after {
-          border-top: 7px solid #23d8cc; }
+          border-top: 7px solid #d5ea66; }
       .bar-chart .chart .bar.C .bar-left {
-        background-color: #BE682E; }
+        background-color: #F9644C; }
       .bar-chart .chart .bar.C .bar-right {
-        background-color: #d4824b; }
+        background-color: #fb8f7d; }
       .bar-chart .chart .bar.C .bar-top {
-        border-bottom: 7px solid #dd9f75; }
+        border-bottom: 7px solid #fcb9af; }
         .bar-chart .chart .bar.C .bar-top:after {
-          border-top: 7px solid #dd9f75; }
+          border-top: 7px solid #fcb9af; }
       .bar-chart .chart .bar.D .bar-left {
-        background-color: #728D3C; }
+        background-color: #ECE348; }
       .bar-chart .chart .bar.D .bar-right {
-        background-color: #8fb14b; }
+        background-color: #f1ea76; }
       .bar-chart .chart .bar.D .bar-top {
-        border-bottom: 7px solid #a5c16e; }
+        border-bottom: 7px solid #f6f1a4; }
         .bar-chart .chart .bar.D .bar-top:after {
-          border-top: 7px solid #a5c16e; }
+          border-top: 7px solid #f6f1a4; }
       .bar-chart .chart .bar.E .bar-left {
-        background-color: #625D1B; }
+        background-color: #F9994C; }
       .bar-chart .chart .bar.E .bar-right {
-        background-color: #8a8326; }
+        background-color: #fbb57d; }
       .bar-chart .chart .bar.E .bar-top {
-        border-bottom: 7px solid #b2a931; }
+        border-bottom: 7px solid #fcd1af; }
         .bar-chart .chart .bar.E .bar-top:after {
-          border-top: 7px solid #b2a931; }
+          border-top: 7px solid #fcd1af; }
       .bar-chart .chart .bar.F .bar-left {
-        background-color: #216876; }
+        background-color: #54bdcf; }
       .bar-chart .chart .bar.F .bar-right {
-        background-color: #2c8b9e; }
+        background-color: #7cccda; }
       .bar-chart .chart .bar.F .bar-top {
-        border-bottom: 7px solid #37aec6; }
+        border-bottom: 7px solid #a3dce5; }
         .bar-chart .chart .bar.F .bar-top:after {
-          border-top: 7px solid #37aec6; }
+          border-top: 7px solid #a3dce5; }
       .bar-chart .chart .bar.G .bar-left {
-        background-color: #19968e; }
+        background-color: #c2e122; }
       .bar-chart .chart .bar.G .bar-right {
-        background-color: #20c2b7; }
+        background-color: #cee74f; }
       .bar-chart .chart .bar.G .bar-top {
-        border-bottom: 7px solid #36ded3; }
+        border-bottom: 7px solid #dbed7c; }
         .bar-chart .chart .bar.G .bar-top:after {
-          border-top: 7px solid #36ded3; }
+          border-top: 7px solid #dbed7c; }
       .bar-chart .chart .bar.H .bar-left {
-        background-color: #cf7437; }
+        background-color: #fa7965; }
       .bar-chart .chart .bar.H .bar-right {
-        background-color: #d99160; }
+        background-color: #fba496; }
       .bar-chart .chart .bar.H .bar-top {
-        border-bottom: 7px solid #e2ad89; }
+        border-bottom: 7px solid #fdcfc7; }
         .bar-chart .chart .bar.H .bar-top:after {
-          border-top: 7px solid #e2ad89; }
+          border-top: 7px solid #fdcfc7; }
       .bar-chart .chart .bar.I .bar-left {
-        background-color: #809f44; }
+        background-color: #eee75f; }
       .bar-chart .chart .bar.I .bar-right {
-        background-color: #9aba5c; }
+        background-color: #f3ee8d; }
       .bar-chart .chart .bar.I .bar-top {
-        border-bottom: 7px solid #b0c980; }
+        border-bottom: 7px solid #f8f5bc; }
         .bar-chart .chart .bar.I .bar-top:after {
-          border-top: 7px solid #b0c980; }
+          border-top: 7px solid #f8f5bc; }
       .bar-chart .chart .bar.J .bar-left {
-        background-color: #767021; }
+        background-color: #faa765; }
       .bar-chart .chart .bar.J .bar-right {
-        background-color: #9e962c; }
+        background-color: #fbc396; }
       .bar-chart .chart .bar.J .bar-top {
-        border-bottom: 7px solid #c6bc37; }
+        border-bottom: 7px solid #fddfc7; }
         .bar-chart .chart .bar.J .bar-top:after {
-          border-top: 7px solid #c6bc37; }
+          border-top: 7px solid #fddfc7; }
       .bar-chart .chart .bar.K .bar-left {
-        background-color: #26798a; }
+        background-color: #68c4d4; }
       .bar-chart .chart .bar.K .bar-right {
-        background-color: #319cb2; }
+        background-color: #90d4df; }
       .bar-chart .chart .bar.K .bar-top {
-        border-bottom: 7px solid #49b7cd; }
+        border-bottom: 7px solid #b7e3eb; }
         .bar-chart .chart .bar.K .bar-top:after {
-          border-top: 7px solid #49b7cd; }
+          border-top: 7px solid #b7e3eb; }
       .bar-chart .chart .bar.L .bar-left {
-        background-color: #1caca2; }
+        background-color: #c8e439; }
       .bar-chart .chart .bar.L .bar-right {
-        background-color: #23d8cc; }
+        background-color: #d5ea66; }
       .bar-chart .chart .bar.L .bar-top {
-        border-bottom: 7px solid #4ce2d8; }
+        border-bottom: 7px solid #e1f093; }
         .bar-chart .chart .bar.L .bar-top:after {
-          border-top: 7px solid #4ce2d8; }
+          border-top: 7px solid #e1f093; }
       .bar-chart .chart .bar.M .bar-left {
-        background-color: #d4824b; }
+        background-color: #fb8f7d; }
       .bar-chart .chart .bar.M .bar-right {
-        background-color: #dd9f75; }
+        background-color: #fcb9af; }
       .bar-chart .chart .bar.M .bar-top {
-        border-bottom: 7px solid #e7bb9e; }
+        border-bottom: 7px solid #fee4e0; }
         .bar-chart .chart .bar.M .bar-top:after {
-          border-top: 7px solid #e7bb9e; }
+          border-top: 7px solid #fee4e0; }
       .bar-chart .chart .bar.N .bar-left {
-        background-color: #8fb14b; }
+        background-color: #f1ea76; }
       .bar-chart .chart .bar.N .bar-right {
-        background-color: #a5c16e; }
+        background-color: #f6f1a4; }
       .bar-chart .chart .bar.N .bar-top {
-        border-bottom: 7px solid #bbd092; }
+        border-bottom: 7px solid #faf8d3; }
         .bar-chart .chart .bar.N .bar-top:after {
-          border-top: 7px solid #bbd092; }
+          border-top: 7px solid #faf8d3; }
       .bar-chart .chart .bar.O .bar-left {
-        background-color: #8a8326; }
+        background-color: #fbb57d; }
       .bar-chart .chart .bar.O .bar-right {
-        background-color: #b2a931; }
+        background-color: #fcd1af; }
       .bar-chart .chart .bar.O .bar-top {
-        border-bottom: 7px solid #cdc449; }
+        border-bottom: 7px solid #feede0; }
         .bar-chart .chart .bar.O .bar-top:after {
-          border-top: 7px solid #cdc449; }
+          border-top: 7px solid #feede0; }
       .bar-chart .chart .bar.P .bar-left {
-        background-color: #2c8b9e; }
+        background-color: #7cccda; }
       .bar-chart .chart .bar.P .bar-right {
-        background-color: #37aec6; }
+        background-color: #a3dce5; }
       .bar-chart .chart .bar.P .bar-top {
-        border-bottom: 7px solid #5dbfd2; }
+        border-bottom: 7px solid #cbebf0; }
         .bar-chart .chart .bar.P .bar-top:after {
-          border-top: 7px solid #5dbfd2; }
+          border-top: 7px solid #cbebf0; }
       .bar-chart .chart .bar.Q .bar-left {
-        background-color: #20c2b7; }
+        background-color: #cee74f; }
       .bar-chart .chart .bar.Q .bar-right {
-        background-color: #36ded3; }
+        background-color: #dbed7c; }
       .bar-chart .chart .bar.Q .bar-top {
-        border-bottom: 7px solid #62e5dd; }
+        border-bottom: 7px solid #e7f3a9; }
         .bar-chart .chart .bar.Q .bar-top:after {
-          border-top: 7px solid #62e5dd; }
+          border-top: 7px solid #e7f3a9; }
       .bar-chart .chart .bar.R .bar-left {
-        background-color: #d99160; }
+        background-color: #fba496; }
       .bar-chart .chart .bar.R .bar-right {
-        background-color: #e2ad89; }
+        background-color: #fdcfc7; }
       .bar-chart .chart .bar.R .bar-top {
-        border-bottom: 7px solid #eccab2; }
+        border-bottom: 7px solid #fffaf9; }
         .bar-chart .chart .bar.R .bar-top:after {
-          border-top: 7px solid #eccab2; }
+          border-top: 7px solid #fffaf9; }
       .bar-chart .chart .bar.S .bar-left {
-        background-color: #9aba5c; }
+        background-color: #f3ee8d; }
       .bar-chart .chart .bar.S .bar-right {
-        background-color: #b0c980; }
+        background-color: #f8f5bc; }
       .bar-chart .chart .bar.S .bar-top {
-        border-bottom: 7px solid #c7d8a3; }
+        border-bottom: 7px solid #fdfcea; }
         .bar-chart .chart .bar.S .bar-top:after {
-          border-top: 7px solid #c7d8a3; }
+          border-top: 7px solid #fdfcea; }
       .bar-chart .chart .bar.T .bar-left {
-        background-color: #9e962c; }
+        background-color: #fbc396; }
       .bar-chart .chart .bar.T .bar-right {
-        background-color: #c6bc37; }
+        background-color: #fddfc7; }
       .bar-chart .chart .bar.T .bar-top {
-        border-bottom: 7px solid #d2ca5d; }
+        border-bottom: 7px solid #fffbf9; }
         .bar-chart .chart .bar.T .bar-top:after {
-          border-top: 7px solid #d2ca5d; }
+          border-top: 7px solid #fffbf9; }
       .bar-chart .chart .bar.U .bar-left {
-        background-color: #319cb2; }
+        background-color: #90d4df; }
       .bar-chart .chart .bar.U .bar-right {
-        background-color: #49b7cd; }
+        background-color: #b7e3eb; }
       .bar-chart .chart .bar.U .bar-top {
-        border-bottom: 7px solid #71c7d8; }
+        border-bottom: 7px solid #dff3f6; }
         .bar-chart .chart .bar.U .bar-top:after {
-          border-top: 7px solid #71c7d8; }
+          border-top: 7px solid #dff3f6; }
       .bar-chart .chart .bar.V .bar-left {
-        background-color: #23d8cc; }
+        background-color: #d5ea66; }
       .bar-chart .chart .bar.V .bar-right {
-        background-color: #4ce2d8; }
+        background-color: #e1f093; }
       .bar-chart .chart .bar.V .bar-top {
-        border-bottom: 7px solid #78e9e1; }
+        border-bottom: 7px solid #edf6c0; }
         .bar-chart .chart .bar.V .bar-top:after {
-          border-top: 7px solid #78e9e1; }
+          border-top: 7px solid #edf6c0; }
       .bar-chart .chart .bar.W .bar-left {
-        background-color: #dd9f75; }
+        background-color: #fcb9af; }
       .bar-chart .chart .bar.W .bar-right {
-        background-color: #e7bb9e; }
+        background-color: #fee4e0; }
       .bar-chart .chart .bar.W .bar-top {
-        border-bottom: 7px solid #f1d8c7; }
+        border-bottom: 7px solid white; }
         .bar-chart .chart .bar.W .bar-top:after {
-          border-top: 7px solid #f1d8c7; }
+          border-top: 7px solid white; }
       .bar-chart .chart .bar.X .bar-left {
-        background-color: #a5c16e; }
+        background-color: #f6f1a4; }
       .bar-chart .chart .bar.X .bar-right {
-        background-color: #bbd092; }
+        background-color: #faf8d3; }
       .bar-chart .chart .bar.X .bar-top {
-        border-bottom: 7px solid #d2e0b5; }
+        border-bottom: 7px solid white; }
         .bar-chart .chart .bar.X .bar-top:after {
-          border-top: 7px solid #d2e0b5; }
+          border-top: 7px solid white; }
       .bar-chart .chart .bar.Y .bar-left {
-        background-color: #b2a931; }
+        background-color: #fcd1af; }
       .bar-chart .chart .bar.Y .bar-right {
-        background-color: #cdc449; }
+        background-color: #feede0; }
       .bar-chart .chart .bar.Y .bar-top {
-        border-bottom: 7px solid #d8d171; }
+        border-bottom: 7px solid white; }
         .bar-chart .chart .bar.Y .bar-top:after {
-          border-top: 7px solid #d8d171; }
+          border-top: 7px solid white; }
       .bar-chart .chart .bar.Z .bar-left {
-        background-color: #37aec6; }
+        background-color: #a3dce5; }
       .bar-chart .chart .bar.Z .bar-right {
-        background-color: #5dbfd2; }
+        background-color: #cbebf0; }
       .bar-chart .chart .bar.Z .bar-top {
-        border-bottom: 7px solid #85cedd; }
+        border-bottom: 7px solid #f3fafc; }
         .bar-chart .chart .bar.Z .bar-top:after {
-          border-top: 7px solid #85cedd; }
+          border-top: 7px solid #f3fafc; }

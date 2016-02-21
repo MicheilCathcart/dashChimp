@@ -1,0 +1,45 @@
+<div class="dataset">
+	
+	<div class="dataset-header">
+		<div class="vertical-align">
+			TEMPLATE FIELDS
+		</div>
+	</div>
+	
+    <!-- Template headings -->
+    
+	<div class="data-row">
+        
+        <div class="cell data-heading center date" style="width: {{ 100 / ( templateData.length + 1 )}}%;">
+            <div class="vertical-align">
+                DATE
+            </div>
+        </div>
+        
+		<input type="text" ng-if="$index + 1 != templateData.length && $index + 1 != templateData.length  - 1 " ng-model="headings.name" ng-class="{ coloured: headings.name }" ng-repeat-start="headings in templateData" class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / ( templateData.length + 1 ) }}%;"/>
+        
+		<input type="text" ng-if="$index + 1 == templateData.length  - 1 " ng-change="removeColumn(headings.name)" ng-model-options="{ updateOn: 'blur', debounce: { 'blur': 0 } }" ng-model="headings.name" ng-class="{ coloured: headings.name }" class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / ( templateData.length + 1 ) }}%;"/>
+        
+		<input type="text" ng-if="$index + 1 == templateData.length" ng-change="addColumn(headings.name)" ng-model-options="{ updateOn: 'blur', debounce: {  'blur': 0 } }" ng-model="headings.name" ng-class="{ coloured: headings.name }" ng-repeat-end class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / ( templateData.length + 1 )}}%;"/>
+        
+	</div>
+    
+    <!-- Cell Type -->
+	
+	<div class="data-row">
+        
+       <div class="cell center" style="width: {{ 100 / ( templateData.length + 1 )}}%;">
+            <div class="vertical-align">
+                Date (Default)
+            </div>
+        </div>
+        
+		<div ng-repeat="cell in templateData" class="cell" style="width: {{ 100 / ( templateData.length + 1 )}}%;">
+			<input type="text" ng-model="cell.type" class="center" ng-change="renderBars()" ng-model-options="{ updateOn: 'blur', debounce: {  'blur': 0 } }"/>
+			<div class="cell-label">{{ $index | alphabet }}{{ $parent.$index }}</div>
+		</div>
+	</div>
+    
+    <!-- Cell Type -->
+	
+</div>

@@ -7,6 +7,10 @@
 // Dataset
 
 .dataset {
+    
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 	
 	.dataset-header {
 		cursor: pointer;
@@ -94,6 +98,7 @@
 				color:white;
 				background-color: $color;
 					border-right: 1px solid lighten($color, 5);
+                    border-bottom: 1px solid lighten($color, 5);
 					&:focus {
 						background-color: lighten($color, 1);
 					}	

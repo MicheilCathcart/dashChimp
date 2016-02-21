@@ -110,9 +110,6 @@ body {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
-.ui-view {
-  padding-left: 166px; }
-
 input {
   width: 100%;
   background-color: transparent;

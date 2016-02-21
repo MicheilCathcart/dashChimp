@@ -28,9 +28,14 @@ app.config([
 				url:'/new-dashboard/',
 				templateUrl:'../app/newDashboard/newDashboard.html',
 				controller: 'newDashboard'
+			})
+            .state('chimpBuilder', {
+				url:'/chimp-builder/',
+				templateUrl:'../app/chimpBuilder/chimpBuilder.html',
+				controller: 'chimpBuilder'
 			});
 			
-			$urlRouterProvider.otherwise('/');
+			$urlRouterProvider.otherwise('/chimp-builder/');
 
 	}
 ])

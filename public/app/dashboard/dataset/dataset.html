@@ -14,10 +14,9 @@
 	</div>
 	
 	<div class="data-row">
-		<div class="cell data-heading center date-heading" value="{{ nowTime }}" style="width: {{100 / dataHeadings.length + 1 }}%">DATE</div>
-		<input type="text" ng-if="$index + 1 != dataHeadings.length && $index + 1 != dataHeadings.length  - 1 " ng-model="headings.value" ng-class="{ coloured: headings.value }" ng-repeat-start="headings in dataHeadings" class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / dataHeadings.length + 1}}%;"/>
-		<input type="text" ng-if="$index + 1 == dataHeadings.length  - 1 " ng-change="removeColumn(headings.value)" ng-model-options="{ updateOn: 'blur', debounce: { 'blur': 0 } }" ng-model="headings.value" ng-class="{ coloured: headings.value }" class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / dataHeadings.length + 1}}%;"/>
-		<input type="text" ng-if="$index + 1 == dataHeadings.length" ng-change="addColumn(headings.value)" ng-model-options="{ updateOn: 'blur', debounce: {  'blur': 0 } }" ng-model="headings.value" ng-class="{ coloured: headings.value }" ng-repeat-end class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / dataHeadings.length + 1}}%;"/>
+		<input type="text" ng-if="$index + 1 != dataHeadings.length && $index + 1 != dataHeadings.length  - 1 " ng-model="headings.value" ng-class="{ coloured: headings.value }" ng-repeat-start="headings in dataHeadings" class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / dataHeadings.length }}%;"/>
+		<input type="text" ng-if="$index + 1 == dataHeadings.length  - 1 " ng-change="removeColumn(headings.value)" ng-model-options="{ updateOn: 'blur', debounce: { 'blur': 0 } }" ng-model="headings.value" ng-class="{ coloured: headings.value }" class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / dataHeadings.length }}%;"/>
+		<input type="text" ng-if="$index + 1 == dataHeadings.length" ng-change="addColumn(headings.value)" ng-model-options="{ updateOn: 'blur', debounce: {  'blur': 0 } }" ng-model="headings.value" ng-class="{ coloured: headings.value }" ng-repeat-end class="cell data-heading center {{ $index | alphabet }}" style="width: {{100 / dataHeadings.length }}%;"/>
 	</div>
 	
 	<div ng-repeat="rows in dataset track by $index" class="data-row">
