@@ -198,6 +198,17 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/public\/app\/chimpBuilder\/builderData\/filters\/syntaxFilter.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/app\/chimpBuilder\/builderData\/filters\/syntaxFilter.js",
+		"outputAbbreviatedPath": "\/public\/app\/chimpBuilder\/builderData\/filters\/min\/syntaxFilter-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
 	"\/public\/app\/chimpBuilder\/builderMenu\/builderMenu.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -236,6 +247,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/public\/app\/chimpBuilder\/dataCreator\/dataCreator.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/app\/chimpBuilder\/dataCreator\/dataCreator.js",
+		"outputAbbreviatedPath": "\/public\/app\/chimpBuilder\/dataCreator\/min\/dataCreator-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/public\/app\/dashboard\/dashboard-header\/dashboard-header.html": {
@@ -356,6 +378,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
+		},
+	"\/public\/app\/filters\/trustAsHTML.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/app\/filters\/trustAsHTML.js",
+		"outputAbbreviatedPath": "\/public\/app\/filters\/min\/trustAsHTML-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
 		},
 	"\/public\/app\/newDashboard\/newDashboard.html": {
 		"fileType": 8192,

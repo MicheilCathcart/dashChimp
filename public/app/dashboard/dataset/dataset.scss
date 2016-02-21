@@ -106,6 +106,14 @@
 			}
 		}
 	}
+    
+    .syntax {
+		@each $letter, $color in $alphabet {
+			&.#{$letter} {
+				color: $color;
+			}
+		}
+	}
 	
 }
 

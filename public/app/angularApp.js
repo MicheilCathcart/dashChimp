@@ -3,12 +3,13 @@ var app = angular.module("app", [
 	'app.charts',
 	'app.dashboard',
 	'app.menus',
-	'ui.router'
+	'ui.router',
+    'ngSanitize'
 ]);
 
 // Dependencies 
 angular.module('app.charts', []);
-angular.module('app.dashboard', []);
+angular.module('app.dashboard', ['ngSanitize']);
 angular.module('app.menus', []);
 
 // Config 

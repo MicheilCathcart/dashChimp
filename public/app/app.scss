@@ -111,6 +111,7 @@ input {
     background-color: rgba(0,0,0,0);
     border: none;
     color: $fontColour;
+    font-weight: 300;
     font-family: 'Lato', sans-serif;
 	&:focus {
 		outline:0;

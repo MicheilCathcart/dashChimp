@@ -15,6 +15,8 @@
 		
 		function controller ($scope, $element) {
             
+            // Example data template to get started
+            
             $scope.templateData = [
                 {
                    name: 'Data 1',
@@ -45,9 +47,26 @@
                    type: null 
                 }
                 ]
+            
+            // Create an array of the data names to use with syntax highlighting
+                
+            $scope.dataNames = function() {
+                return _.remove(_.map($scope.templateData, 'name'), function(n){ return n !== null });
+            };
+            
+            // Show the type options as selectables whenever a key is pressed
+                
+            $scope.showTypeOptions = function() {
+                $log.debug('Show Type Options');
+            }
+            
 		}
-		
 		function link ($scope, $element) {
+
+
+            $scope.changing = function() {
+                $log.debug('I am changing');
+            }
 
 			$scope.addColumn = function (value) {
 				if (value) {
@@ -65,6 +84,8 @@
 			}
 
 		} 
+        
+        
     	
     }]);
   

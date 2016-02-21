@@ -35,8 +35,8 @@
         </div>
         
 		<div ng-repeat="cell in templateData" class="cell" style="width: {{ 100 / ( templateData.length + 1 )}}%;">
-			<input type="text" ng-model="cell.type" class="center" ng-change="renderBars()" ng-model-options="{ updateOn: 'blur', debounce: {  'blur': 0 } }"/>
-			<div class="cell-label">{{ $index | alphabet }}{{ $parent.$index }}</div>
+			<input type="text" ng-click="showTypeOptions()" ng-model="cell.type" class="center cell-overlay"/>
+			<div class="cell-underlay" ng-bind-html="cell.type | syntax:dataNames() | trustAsHtml"></div>
 		</div>
 	</div>
     

@@ -3,3 +3,25 @@
   width: 80%;
   margin: 68px auto;
   height: 1500px; }
+
+.syntax {
+  font-weight: 500; }
+
+.dataset .cell-underlay {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 11px;
+  z-index: 0;
+  pointer-events: none;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8D6647;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif; }
+.dataset .cell-overlay {
+  color: transparent; }
