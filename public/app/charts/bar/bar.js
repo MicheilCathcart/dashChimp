@@ -32,7 +32,7 @@
 				$log.debug($scope.maxValue.value);
 				
 				$scope.scaleX = d3.scale.linear()
-					.domain([0, $scope.maxValue.value])
+					.domain([0, 200])
 					.range([0, height]);
 				
 			}
