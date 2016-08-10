@@ -8,12 +8,9 @@
 
     <!-- Style sheets -->
     <link href="css/app.css" rel="stylesheet"/>
-    <link href="css/dashboard.css" rel="stylesheet"/>
-    <link href="css/dashboard-header.css" rel="stylesheet"/>
     <link href="css/bar.css" rel="stylesheet"/>
+    <link href="css/templateBuilder.css" rel="stylesheet"/>
     <link href="css/dataset.css" rel="stylesheet"/>
-    <link href="css/sidemenu.css" rel="stylesheet"/>
-    <link href="css/builderData.css" rel="stylesheet"/>
     
     <!-- Fonts -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -39,30 +36,18 @@
     <!-- App -->
     <script src="app/angularApp.js"></script>
     
-    <!-- Menus -->
-    <script src="app/sidemenu/sidemenu.js"></script>
-    
     <!-- Charts -->
     <script src="app/charts/bar/bar.js"></script>
     
-    <!-- Dashboard -->
-    <script src="app/dashboard/dashboard.js"></script>
-    <script src="app/dashboard/dataset/dataset.js"></script>
-    <script src="app/dashboard/dashboard-header/dashboard-header.js"></script>
-    <script src="app/newDashboard/newDashboard.js"></script>
-    
-    <!-- Chimp Builder -->
-    <script src="app/chimpBuilder/chimpBuilder.js"></script>
-    <script src="app/chimpBuilder/builderMenu/builderMenu.js"></script>
-    <script src="app/chimpBuilder/builderData/builderData.js"></script>
+    <!-- Template Builder -->
+    <script src="app/templateBuilder/templateBuilder.js"></script>
+    <script src="app/templateBuilder/templateBuilderData/templateBuilderData.js"></script>
     
     <!-- Filters -->
     <script src="app/filters/trustAsHTML.js"></script>
-    <script src="app/dashboard/dataset/filters/alphabet-filter.js"></script>
-    <script src="app/chimpBuilder/builderData/filters/syntaxFilter.js"></script>
-    
-    
-    
+    <script src="app/filters/alphabetFilter.js"></script>
+    <script src="app/filters/syntaxFilter.js"></script>
+
 </head>
 
 <header class="navbar">
@@ -71,12 +56,6 @@
     </a>
     <div class="username pull-right">
     <i class="fa fa-user fa-size-medium fa-right"></i>
-    </div>
-    <div ui-sref="dashboard" class="username pull-right">
-        Graph
-    </div>
-    <div ui-sref="chimpBuilder" class="username pull-right">
-        Builder
     </div>
     <div class="username pull-right">
         BUILDER BOB

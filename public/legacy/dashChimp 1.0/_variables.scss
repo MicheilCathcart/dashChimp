@@ -1,0 +1,57 @@
+
+// Variables
+
+// Main
+
+$chimpPrimary: #8D6647;
+$chimpDark: #DBD6D1;
+$chimpBackground: #F9F9F9;
+$chimpHighlight:$chimpPrimary;
+$chimpLowlight:  #DBD6D1;
+$fontColour:  $chimpPrimary;
+$headerColour:  #FFFFFF;
+$lineColour:  #C2B1A4;
+$lightHover: #FFFFFF;
+$lightHoverColor: $chimpPrimary;
+$datasetHeaderColour: #FFFFFF;
+$cellBackground: #F1F1F0;
+
+// Graph
+
+$graph1: #40B5C9;
+$graph2: #B1CE1C;
+$graph3: #F9644C;
+$graph4: #ECE348;
+$graph5: #F9994C;
+$graph6: lighten(#40B5C9,5);
+$graph7: lighten(#B1CE1C,5);
+$graph8: lighten(#F9644C,5);
+$graph9: lighten(#ECE348,5);
+$graph10:lighten(#F9994C,5);
+$graph11: lighten(#40B5C9,10);
+$graph12: lighten(#B1CE1C,10);
+$graph13: lighten(#F9644C,10);
+$graph14: lighten(#ECE348,10);
+$graph15: lighten(#F9994C,10);
+$graph16: lighten(#40B5C9,15);
+$graph17: lighten(#B1CE1C,15);
+$graph18: lighten(#F9644C,15);
+$graph19: lighten(#ECE348,15);
+$graph20: lighten(#F9994C,15);
+$graph21: lighten(#40B5C9,20);
+$graph22: lighten(#B1CE1C,20);
+$graph23: lighten(#F9644C,20);
+$graph24: lighten(#ECE348,20);
+$graph25: lighten(#F9994C,20);
+$graph26: lighten(#40B5C9,25);
+
+// Padding
+
+$desktopPadding: 25px; 
+
+
+// Sizes
+
+$navbarHeight: 56px; 
+$sideMenuWidth: 166px; 
+$dashboardLinkHeight:147px;

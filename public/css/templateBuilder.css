@@ -1,4 +1,8 @@
 /* Vertical Align */
+/* Animations */
+.animate {
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; }
+
 .dashboard-header {
   height: 42px;
   border-bottom: 1px solid #C2B1A4; }
@@ -11,6 +15,8 @@
     text-transform: uppercase; }
     .dashboard-header .header-button.cog {
       border-left: 1px solid #C2B1A4; }
+    .dashboard-header .header-button.no-border {
+      border-right: 0px; }
     .dashboard-header .header-button.date-range {
       width: 152px;
       font-size: 9px; }
@@ -47,3 +53,32 @@
           color: #8D6647; }
       .dashboard-header .header-title .title input:hover {
         background-color: #FFFFFF; }
+
+.dashboard-area {
+  background-color: white;
+  width: 80%;
+  max-width: 765px;
+  margin: 68px auto;
+  height: 1500px; }
+
+.syntax {
+  font-weight: 500; }
+
+.dataset .cell-underlay {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 11px;
+  z-index: 0;
+  pointer-events: none;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8D6647;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif; }
+.dataset .cell-overlay {
+  color: transparent; }

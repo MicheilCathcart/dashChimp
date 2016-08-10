@@ -1,4 +1,29 @@
 /* Vertical Align */
+@keyframes "blink" {
+  from, to {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+@-moz-keyframes blink {
+  from, to {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+@-webkit-keyframes "blink" {
+  from, to {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+@-ms-keyframes "blink" {
+  from, to {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+@-o-keyframes "blink" {
+  from, to {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
 .dataset {
   position: fixed;
   width: 100%;
@@ -21,6 +46,13 @@
     height: 46px;
     border-right: 1px solid #C2B1A4;
     border-bottom: 1px solid #C2B1A4; }
+    .dataset .cell .fake-cursor {
+      border-right: 1px solid #8D6647;
+      -webkit-animation: 1s blink step-end infinite;
+      -moz-animation: 1s blink step-end infinite;
+      -ms-animation: 1s blink step-end infinite;
+      -o-animation: 1s blink step-end infinite;
+      animation: 1s blink step-end infinite; }
     .dataset .cell.data-heading {
       text-transform: uppercase;
       background-color: #DBD6D1; }

@@ -1,8 +1,55 @@
 
 // Imports
 
-@import '../../variables';
-@import '../../mixins';
+@import '../scss/variables';
+@import '../scss/mixins';
+
+// Animations
+
+@keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 
 // Dataset
 
@@ -28,6 +75,7 @@
 			cursor: pointer;
 		}
 	}
+
 	
 	.cell {
 		position:relative;
@@ -36,6 +84,14 @@
 		height: 46px;
 		border-right: 1px solid $lineColour;
 		border-bottom: 1px solid $lineColour;
+		.fake-cursor {
+			border-right: 1px solid $chimpHighlight;
+			-webkit-animation: 1s blink step-end infinite;
+			-moz-animation: 1s blink step-end infinite;
+			-ms-animation: 1s blink step-end infinite;
+			-o-animation: 1s blink step-end infinite;
+			animation: 1s blink step-end infinite;
+		}
 		&.data-heading {
 			text-transform: uppercase;
 			background-color: $chimpLowlight;

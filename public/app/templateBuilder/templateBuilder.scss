@@ -1,0 +1,118 @@
+// Imports 
+
+@import '../scss/variables';
+@import '../scss/mixins';
+@import '../scss/animations';
+
+// Template Builder Header
+
+.dashboard-header {
+	height: 42px;
+	border-bottom: 1px solid $lineColour; 
+	
+	.header-button {
+		width: 76px;
+		height: 42px;
+		display: inline-block;
+		text-align: center;
+		border-right: 1px solid $lineColour;
+		text-transform: uppercase;
+		&.cog {
+			border-left: 1px solid $lineColour;
+		}
+        &.no-border {
+			border-right: 0px;
+		}
+		&.date-range {
+			width: 152px;
+			font-size: 9px;
+		}
+		&:hover {
+			background-color: $lightHover;
+			cursor: pointer;
+			border-bottom: 1px solid $lineColour; 
+		}
+	}
+	
+	.header-title {
+		height: 42px;
+		overflow:hidden;
+		width:430px;
+		text-align: left;
+		display: inline-block;
+		text-transform: uppercase;
+		&:hover {
+			background-color: $lightHover;
+			cursor: text;
+			border-bottom: 1px solid $lineColour; 
+			.title .edit {
+				color: $fontColour;
+			}
+		}
+		.title .edit {
+			position: absolute;
+    		right: 25px;
+    		top: 12px;
+			color: $chimpBackground;
+		}
+		.title input {
+			padding: 0px 25px;
+			height: 41px;
+			width: 100%;
+			text-transform: uppercase;
+			&:focus {
+				background-color: $lightHover;
+				& + .edit {
+				color: $chimpPrimary;
+				}
+			}
+			&:hover {
+				background-color: $lightHover;
+			}
+		}
+	}
+	
+} 
+
+// Template Builder Main
+
+.dashboard-area {
+    background-color:white;
+    width:80%;
+    max-width:765px;
+    margin: 68px auto;
+    height: 1500px;
+}
+
+// Template Builder Dataset
+
+.syntax {
+    font-weight: 500;
+}
+
+.dataset {
+
+    .cell-underlay {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 11px;
+    z-index: 0;
+    pointer-events: none;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8D6647;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+    }
+    
+    .cell-overlay {
+        color: transparent;
+    }
+
+}
+
