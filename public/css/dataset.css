@@ -46,8 +46,10 @@
     height: 46px;
     border-right: 1px solid #C2B1A4;
     border-bottom: 1px solid #C2B1A4; }
+    .dataset .cell input:focus + .cell-underlay .fake-cursor {
+      border-right: 1px solid #8D6647; }
     .dataset .cell .fake-cursor {
-      border-right: 1px solid #8D6647;
+      border-right: 0px solid #8D6647;
       -webkit-animation: 1s blink step-end infinite;
       -moz-animation: 1s blink step-end infinite;
       -ms-animation: 1s blink step-end infinite;
