@@ -73,237 +73,239 @@
       z-index: 1;
       font-size: 7px;
       color: #C2B1A4; }
-  .dataset .coloured.A {
-    color: white;
-    background-color: #40B5C9;
-    border-right: 1px solid #54bdcf;
-    border-bottom: 1px solid #54bdcf; }
-    .dataset .coloured.A:focus {
-      background-color: #44b7ca; }
-  .dataset .coloured.B {
-    color: white;
-    background-color: #B1CE1C;
-    border-right: 1px solid #c2e122;
-    border-bottom: 1px solid #c2e122; }
-    .dataset .coloured.B:focus {
-      background-color: #b5d21d; }
-  .dataset .coloured.C {
-    color: white;
-    background-color: #F9644C;
-    border-right: 1px solid #fa7965;
-    border-bottom: 1px solid #fa7965; }
-    .dataset .coloured.C:focus {
-      background-color: #f96851; }
-  .dataset .coloured.D {
-    color: white;
-    background-color: #ECE348;
-    border-right: 1px solid #eee75f;
-    border-bottom: 1px solid #eee75f; }
-    .dataset .coloured.D:focus {
-      background-color: #ece44d; }
-  .dataset .coloured.E {
-    color: white;
-    background-color: #F9994C;
-    border-right: 1px solid #faa765;
-    border-bottom: 1px solid #faa765; }
-    .dataset .coloured.E:focus {
-      background-color: #f99c51; }
-  .dataset .coloured.F {
-    color: white;
-    background-color: #54bdcf;
-    border-right: 1px solid #68c4d4;
-    border-bottom: 1px solid #68c4d4; }
-    .dataset .coloured.F:focus {
-      background-color: #58bed0; }
-  .dataset .coloured.G {
-    color: white;
-    background-color: #c2e122;
-    border-right: 1px solid #c8e439;
-    border-bottom: 1px solid #c8e439; }
-    .dataset .coloured.G:focus {
-      background-color: #c3e227; }
-  .dataset .coloured.H {
-    color: white;
-    background-color: #fa7965;
-    border-right: 1px solid #fb8f7d;
-    border-bottom: 1px solid #fb8f7d; }
-    .dataset .coloured.H:focus {
-      background-color: #fa7e6a; }
-  .dataset .coloured.I {
-    color: white;
-    background-color: #eee75f;
-    border-right: 1px solid #f1ea76;
-    border-bottom: 1px solid #f1ea76; }
-    .dataset .coloured.I:focus {
-      background-color: #efe764; }
-  .dataset .coloured.J {
-    color: white;
-    background-color: #faa765;
-    border-right: 1px solid #fbb57d;
-    border-bottom: 1px solid #fbb57d; }
-    .dataset .coloured.J:focus {
-      background-color: #faaa6a; }
-  .dataset .coloured.K {
-    color: white;
-    background-color: #68c4d4;
-    border-right: 1px solid #7cccda;
-    border-bottom: 1px solid #7cccda; }
-    .dataset .coloured.K:focus {
-      background-color: #6cc6d5; }
-  .dataset .coloured.L {
-    color: white;
-    background-color: #c8e439;
-    border-right: 1px solid #cee74f;
-    border-bottom: 1px solid #cee74f; }
-    .dataset .coloured.L:focus {
-      background-color: #c9e53d; }
-  .dataset .coloured.M {
-    color: white;
-    background-color: #fb8f7d;
-    border-right: 1px solid #fba496;
-    border-bottom: 1px solid #fba496; }
-    .dataset .coloured.M:focus {
-      background-color: #fb9382; }
-  .dataset .coloured.N {
-    color: white;
-    background-color: #f1ea76;
-    border-right: 1px solid #f3ee8d;
-    border-bottom: 1px solid #f3ee8d; }
-    .dataset .coloured.N:focus {
-      background-color: #f1eb7b; }
-  .dataset .coloured.O {
-    color: white;
-    background-color: #fbb57d;
-    border-right: 1px solid #fbc396;
-    border-bottom: 1px solid #fbc396; }
-    .dataset .coloured.O:focus {
-      background-color: #fbb882; }
-  .dataset .coloured.P {
-    color: white;
-    background-color: #7cccda;
-    border-right: 1px solid #90d4df;
-    border-bottom: 1px solid #90d4df; }
-    .dataset .coloured.P:focus {
-      background-color: #80cedb; }
-  .dataset .coloured.Q {
-    color: white;
-    background-color: #cee74f;
-    border-right: 1px solid #d5ea66;
-    border-bottom: 1px solid #d5ea66; }
-    .dataset .coloured.Q:focus {
-      background-color: #d0e854; }
-  .dataset .coloured.R {
-    color: white;
-    background-color: #fba496;
-    border-right: 1px solid #fcb9af;
-    border-bottom: 1px solid #fcb9af; }
-    .dataset .coloured.R:focus {
-      background-color: #fca89b; }
-  .dataset .coloured.S {
-    color: white;
-    background-color: #f3ee8d;
-    border-right: 1px solid #f6f1a4;
-    border-bottom: 1px solid #f6f1a4; }
-    .dataset .coloured.S:focus {
-      background-color: #f4ee92; }
-  .dataset .coloured.T {
-    color: white;
-    background-color: #fbc396;
-    border-right: 1px solid #fcd1af;
-    border-bottom: 1px solid #fcd1af; }
-    .dataset .coloured.T:focus {
-      background-color: #fcc69b; }
-  .dataset .coloured.U {
-    color: white;
-    background-color: #90d4df;
-    border-right: 1px solid #a3dce5;
-    border-bottom: 1px solid #a3dce5; }
-    .dataset .coloured.U:focus {
-      background-color: #93d5e1; }
-  .dataset .coloured.V {
-    color: white;
-    background-color: #d5ea66;
-    border-right: 1px solid #dbed7c;
-    border-bottom: 1px solid #dbed7c; }
-    .dataset .coloured.V:focus {
-      background-color: #d6eb6a; }
-  .dataset .coloured.W {
-    color: white;
-    background-color: #fcb9af;
-    border-right: 1px solid #fdcfc7;
-    border-bottom: 1px solid #fdcfc7; }
-    .dataset .coloured.W:focus {
-      background-color: #fcbeb4; }
-  .dataset .coloured.X {
-    color: white;
-    background-color: #f6f1a4;
-    border-right: 1px solid #f8f5bc;
-    border-bottom: 1px solid #f8f5bc; }
-    .dataset .coloured.X:focus {
-      background-color: #f6f2a9; }
-  .dataset .coloured.Y {
-    color: white;
-    background-color: #fcd1af;
-    border-right: 1px solid #fddfc7;
-    border-bottom: 1px solid #fddfc7; }
-    .dataset .coloured.Y:focus {
-      background-color: #fcd4b4; }
-  .dataset .coloured.Z {
-    color: white;
-    background-color: #a3dce5;
-    border-right: 1px solid #b7e3eb;
-    border-bottom: 1px solid #b7e3eb; }
-    .dataset .coloured.Z:focus {
-      background-color: #a7dde6; }
-  .dataset .syntax.A {
-    color: #40B5C9; }
-  .dataset .syntax.B {
-    color: #B1CE1C; }
-  .dataset .syntax.C {
-    color: #F9644C; }
-  .dataset .syntax.D {
-    color: #ECE348; }
-  .dataset .syntax.E {
-    color: #F9994C; }
-  .dataset .syntax.F {
-    color: #54bdcf; }
-  .dataset .syntax.G {
-    color: #c2e122; }
-  .dataset .syntax.H {
-    color: #fa7965; }
-  .dataset .syntax.I {
-    color: #eee75f; }
-  .dataset .syntax.J {
-    color: #faa765; }
-  .dataset .syntax.K {
-    color: #68c4d4; }
-  .dataset .syntax.L {
-    color: #c8e439; }
-  .dataset .syntax.M {
-    color: #fb8f7d; }
-  .dataset .syntax.N {
-    color: #f1ea76; }
-  .dataset .syntax.O {
-    color: #fbb57d; }
-  .dataset .syntax.P {
-    color: #7cccda; }
-  .dataset .syntax.Q {
-    color: #cee74f; }
-  .dataset .syntax.R {
-    color: #fba496; }
-  .dataset .syntax.S {
-    color: #f3ee8d; }
-  .dataset .syntax.T {
-    color: #fbc396; }
-  .dataset .syntax.U {
-    color: #90d4df; }
-  .dataset .syntax.V {
-    color: #d5ea66; }
-  .dataset .syntax.W {
-    color: #fcb9af; }
-  .dataset .syntax.X {
-    color: #f6f1a4; }
-  .dataset .syntax.Y {
-    color: #fcd1af; }
-  .dataset .syntax.Z {
-    color: #a3dce5; }
+
+.coloured.A {
+  color: white !important;
+  background-color: #40B5C9 !important;
+  border-right: 1px solid #54bdcf !important;
+  border-bottom: 1px solid #54bdcf !important; }
+  .coloured.A:focus {
+    background-color: #44b7ca !important; }
+.coloured.B {
+  color: white !important;
+  background-color: #B1CE1C !important;
+  border-right: 1px solid #c2e122 !important;
+  border-bottom: 1px solid #c2e122 !important; }
+  .coloured.B:focus {
+    background-color: #b5d21d !important; }
+.coloured.C {
+  color: white !important;
+  background-color: #F9644C !important;
+  border-right: 1px solid #fa7965 !important;
+  border-bottom: 1px solid #fa7965 !important; }
+  .coloured.C:focus {
+    background-color: #f96851 !important; }
+.coloured.D {
+  color: white !important;
+  background-color: #ECE348 !important;
+  border-right: 1px solid #eee75f !important;
+  border-bottom: 1px solid #eee75f !important; }
+  .coloured.D:focus {
+    background-color: #ece44d !important; }
+.coloured.E {
+  color: white !important;
+  background-color: #F9994C !important;
+  border-right: 1px solid #faa765 !important;
+  border-bottom: 1px solid #faa765 !important; }
+  .coloured.E:focus {
+    background-color: #f99c51 !important; }
+.coloured.F {
+  color: white !important;
+  background-color: #54bdcf !important;
+  border-right: 1px solid #68c4d4 !important;
+  border-bottom: 1px solid #68c4d4 !important; }
+  .coloured.F:focus {
+    background-color: #58bed0 !important; }
+.coloured.G {
+  color: white !important;
+  background-color: #c2e122 !important;
+  border-right: 1px solid #c8e439 !important;
+  border-bottom: 1px solid #c8e439 !important; }
+  .coloured.G:focus {
+    background-color: #c3e227 !important; }
+.coloured.H {
+  color: white !important;
+  background-color: #fa7965 !important;
+  border-right: 1px solid #fb8f7d !important;
+  border-bottom: 1px solid #fb8f7d !important; }
+  .coloured.H:focus {
+    background-color: #fa7e6a !important; }
+.coloured.I {
+  color: white !important;
+  background-color: #eee75f !important;
+  border-right: 1px solid #f1ea76 !important;
+  border-bottom: 1px solid #f1ea76 !important; }
+  .coloured.I:focus {
+    background-color: #efe764 !important; }
+.coloured.J {
+  color: white !important;
+  background-color: #faa765 !important;
+  border-right: 1px solid #fbb57d !important;
+  border-bottom: 1px solid #fbb57d !important; }
+  .coloured.J:focus {
+    background-color: #faaa6a !important; }
+.coloured.K {
+  color: white !important;
+  background-color: #68c4d4 !important;
+  border-right: 1px solid #7cccda !important;
+  border-bottom: 1px solid #7cccda !important; }
+  .coloured.K:focus {
+    background-color: #6cc6d5 !important; }
+.coloured.L {
+  color: white !important;
+  background-color: #c8e439 !important;
+  border-right: 1px solid #cee74f !important;
+  border-bottom: 1px solid #cee74f !important; }
+  .coloured.L:focus {
+    background-color: #c9e53d !important; }
+.coloured.M {
+  color: white !important;
+  background-color: #fb8f7d !important;
+  border-right: 1px solid #fba496 !important;
+  border-bottom: 1px solid #fba496 !important; }
+  .coloured.M:focus {
+    background-color: #fb9382 !important; }
+.coloured.N {
+  color: white !important;
+  background-color: #f1ea76 !important;
+  border-right: 1px solid #f3ee8d !important;
+  border-bottom: 1px solid #f3ee8d !important; }
+  .coloured.N:focus {
+    background-color: #f1eb7b !important; }
+.coloured.O {
+  color: white !important;
+  background-color: #fbb57d !important;
+  border-right: 1px solid #fbc396 !important;
+  border-bottom: 1px solid #fbc396 !important; }
+  .coloured.O:focus {
+    background-color: #fbb882 !important; }
+.coloured.P {
+  color: white !important;
+  background-color: #7cccda !important;
+  border-right: 1px solid #90d4df !important;
+  border-bottom: 1px solid #90d4df !important; }
+  .coloured.P:focus {
+    background-color: #80cedb !important; }
+.coloured.Q {
+  color: white !important;
+  background-color: #cee74f !important;
+  border-right: 1px solid #d5ea66 !important;
+  border-bottom: 1px solid #d5ea66 !important; }
+  .coloured.Q:focus {
+    background-color: #d0e854 !important; }
+.coloured.R {
+  color: white !important;
+  background-color: #fba496 !important;
+  border-right: 1px solid #fcb9af !important;
+  border-bottom: 1px solid #fcb9af !important; }
+  .coloured.R:focus {
+    background-color: #fca89b !important; }
+.coloured.S {
+  color: white !important;
+  background-color: #f3ee8d !important;
+  border-right: 1px solid #f6f1a4 !important;
+  border-bottom: 1px solid #f6f1a4 !important; }
+  .coloured.S:focus {
+    background-color: #f4ee92 !important; }
+.coloured.T {
+  color: white !important;
+  background-color: #fbc396 !important;
+  border-right: 1px solid #fcd1af !important;
+  border-bottom: 1px solid #fcd1af !important; }
+  .coloured.T:focus {
+    background-color: #fcc69b !important; }
+.coloured.U {
+  color: white !important;
+  background-color: #90d4df !important;
+  border-right: 1px solid #a3dce5 !important;
+  border-bottom: 1px solid #a3dce5 !important; }
+  .coloured.U:focus {
+    background-color: #93d5e1 !important; }
+.coloured.V {
+  color: white !important;
+  background-color: #d5ea66 !important;
+  border-right: 1px solid #dbed7c !important;
+  border-bottom: 1px solid #dbed7c !important; }
+  .coloured.V:focus {
+    background-color: #d6eb6a !important; }
+.coloured.W {
+  color: white !important;
+  background-color: #fcb9af !important;
+  border-right: 1px solid #fdcfc7 !important;
+  border-bottom: 1px solid #fdcfc7 !important; }
+  .coloured.W:focus {
+    background-color: #fcbeb4 !important; }
+.coloured.X {
+  color: white !important;
+  background-color: #f6f1a4 !important;
+  border-right: 1px solid #f8f5bc !important;
+  border-bottom: 1px solid #f8f5bc !important; }
+  .coloured.X:focus {
+    background-color: #f6f2a9 !important; }
+.coloured.Y {
+  color: white !important;
+  background-color: #fcd1af !important;
+  border-right: 1px solid #fddfc7 !important;
+  border-bottom: 1px solid #fddfc7 !important; }
+  .coloured.Y:focus {
+    background-color: #fcd4b4 !important; }
+.coloured.Z {
+  color: white !important;
+  background-color: #a3dce5 !important;
+  border-right: 1px solid #b7e3eb !important;
+  border-bottom: 1px solid #b7e3eb !important; }
+  .coloured.Z:focus {
+    background-color: #a7dde6 !important; }
+
+.syntax.A {
+  color: #40B5C9 !important; }
+.syntax.B {
+  color: #B1CE1C !important; }
+.syntax.C {
+  color: #F9644C !important; }
+.syntax.D {
+  color: #ECE348 !important; }
+.syntax.E {
+  color: #F9994C !important; }
+.syntax.F {
+  color: #54bdcf !important; }
+.syntax.G {
+  color: #c2e122 !important; }
+.syntax.H {
+  color: #fa7965 !important; }
+.syntax.I {
+  color: #eee75f !important; }
+.syntax.J {
+  color: #faa765 !important; }
+.syntax.K {
+  color: #68c4d4 !important; }
+.syntax.L {
+  color: #c8e439 !important; }
+.syntax.M {
+  color: #fb8f7d !important; }
+.syntax.N {
+  color: #f1ea76 !important; }
+.syntax.O {
+  color: #fbb57d !important; }
+.syntax.P {
+  color: #7cccda !important; }
+.syntax.Q {
+  color: #cee74f !important; }
+.syntax.R {
+  color: #fba496 !important; }
+.syntax.S {
+  color: #f3ee8d !important; }
+.syntax.T {
+  color: #fbc396 !important; }
+.syntax.U {
+  color: #90d4df !important; }
+.syntax.V {
+  color: #d5ea66 !important; }
+.syntax.W {
+  color: #fcb9af !important; }
+.syntax.X {
+  color: #f6f1a4 !important; }
+.syntax.Y {
+  color: #fcd1af !important; }
+.syntax.Z {
+  color: #a3dce5 !important; }

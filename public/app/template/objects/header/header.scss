@@ -1,0 +1,15 @@
+// Imports 
+
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/animations';
+
+.template-objects-header {
+    textarea {
+        color: $highlight1;
+        border: 0px;
+        font-weight: bold;
+        text-align:center;
+        font-size: 72px;
+    }
+}

@@ -4,6 +4,7 @@
 @import '../scss/mixins';
 @import '../scss/animations';
 
+
 // Template Builder Header
 
 .dashboard-header {
@@ -76,12 +77,69 @@
 
 // Template Builder Main
 
-.dashboard-area {
+.template-area {
     background-color:white;
+	padding:86px;
+	position: relative;
     width:80%;
     max-width:765px;
     margin: 68px auto;
     height: 1500px;
+    transition: transform 0.5s linear;
+	&.adjusted {
+		transform: translateX(-900px);
+		.edit-fields {
+			transform:translateY(0px);
+		}
+	}
+}
+
+// Template Builder Menu Left
+
+.template-menu-left {
+    background-color: white;
+    position: absolute;
+    padding: 48px 32px;
+	left: -196px;
+	.template-object {
+		margin-bottom: 32px;
+		cursor: move;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}
+
+// Template Builder Menu Right
+
+.template-menu-right {
+    background-color: white;
+    position: absolute;
+	text-align:center;
+    padding: 17px;
+	right: -196px;
+	.template-data-object {
+		font-size: 12px;
+		height: 46px;
+		width: 101px;
+		margin-bottom: 17px;
+		cursor: move;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}
+
+// Edit Fields
+
+.edit-fields {
+	transition: transform 0.5s linear;
+	transform:translateY(-1000px);
+	position:absolute;
+	right:-782px;
+	background-color:white;
+	width:522px;
+	height:600px;
 }
 
 // Template Builder Dataset

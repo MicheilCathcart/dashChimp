@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>fa-pencil</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="New-Template" transform="translate(-1223.000000, -527.000000)" fill="#FFFFFF">
+            <g id="Group-11" transform="translate(1165.000000, 163.000000)">
+                <g id="Group-4" transform="translate(17.000000, 351.000000)">
+                    <g id="fa-pencil" transform="translate(41.000000, 13.000000)">
+                        <path d="M6.076,19.666 L16.491,9.251 L11.284,4.043 L0.869,14.458 L0.869,19.666 L6.076,19.666 L6.076,19.666 Z M2.462,15.109 L3.607,13.964 L6.547,16.927 L5.425,18.072 L4.078,18.072 L4.078,16.456 L2.462,16.456 L2.462,15.109 L2.462,15.109 Z M4.684,13.044 L11.486,6.266 C11.53,6.198 11.598,6.176 11.688,6.176 C11.867,6.176 11.957,6.266 11.957,6.445 C11.957,6.535 11.934,6.602 11.89,6.67 L5.089,13.448 C5.021,13.516 4.954,13.538 4.887,13.538 C4.684,13.538 4.595,13.448 4.595,13.269 C4.595,13.179 4.64,13.111 4.684,13.044 L4.684,13.044 Z M17.299,8.443 L19.386,6.378 C19.701,6.064 19.835,5.682 19.835,5.256 C19.835,4.807 19.701,4.425 19.386,4.111 L16.446,1.17 C16.132,0.856 15.75,0.699 15.301,0.699 C14.852,0.699 14.471,0.856 14.179,1.17 L12.092,3.235 L17.299,8.443 L17.299,8.443 Z" id="Fill-105"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

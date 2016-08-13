@@ -54,12 +54,54 @@
       .dashboard-header .header-title .title input:hover {
         background-color: #FFFFFF; }
 
-.dashboard-area {
+.template-area {
   background-color: white;
+  padding: 86px;
+  position: relative;
   width: 80%;
   max-width: 765px;
   margin: 68px auto;
-  height: 1500px; }
+  height: 1500px;
+  transition: transform 0.5s linear; }
+  .template-area.adjusted {
+    transform: translateX(-900px); }
+    .template-area.adjusted .edit-fields {
+      transform: translateY(0px); }
+
+.template-menu-left {
+  background-color: white;
+  position: absolute;
+  padding: 48px 32px;
+  left: -196px; }
+  .template-menu-left .template-object {
+    margin-bottom: 32px;
+    cursor: move; }
+    .template-menu-left .template-object:last-child {
+      margin-bottom: 0px; }
+
+.template-menu-right {
+  background-color: white;
+  position: absolute;
+  text-align: center;
+  padding: 17px;
+  right: -196px; }
+  .template-menu-right .template-data-object {
+    font-size: 12px;
+    height: 46px;
+    width: 101px;
+    margin-bottom: 17px;
+    cursor: move; }
+    .template-menu-right .template-data-object:last-child {
+      margin-bottom: 0px; }
+
+.edit-fields {
+  transition: transform 0.5s linear;
+  transform: translateY(-1000px);
+  position: absolute;
+  right: -782px;
+  background-color: white;
+  width: 522px;
+  height: 600px; }
 
 .syntax {
   font-weight: 500; }

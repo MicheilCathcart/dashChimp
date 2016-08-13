@@ -121,6 +121,11 @@
 		}
 	}
 	
+
+	
+}
+
+
 	// Generate Colour Lists
 	
 	$alphabet: (
@@ -155,12 +160,12 @@
 	.coloured {
 		@each $letter, $color in $alphabet {
 			&.#{$letter} {
-				color:white;
-				background-color: $color;
-					border-right: 1px solid lighten($color, 5);
-                    border-bottom: 1px solid lighten($color, 5);
+				color:white !important;
+				background-color: $color !important;
+					border-right: 1px solid lighten($color, 5) !important;
+                    border-bottom: 1px solid lighten($color, 5) !important;
 					&:focus {
-						background-color: lighten($color, 1);
+						background-color: lighten($color, 1) !important;
 					}	
 			}
 		}
@@ -169,13 +174,10 @@
     .syntax {
 		@each $letter, $color in $alphabet {
 			&.#{$letter} {
-				color: $color;
+				color: $color !important;
 			}
 		}
 	}
-	
-}
-
 	
 	
 

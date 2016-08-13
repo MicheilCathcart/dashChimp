@@ -51,6 +51,12 @@ input[type=number] {
 .pull-right { float: right; }
 .clearfix { clear: both; }
 
+// Colours
+
+.primary {
+	background-color: $chimpPrimary;
+} 
+
 // Vertical Align
 
 .vertical-align { 
@@ -118,6 +124,12 @@ input {
 	&:focus {
 		outline:0;
 	}
+}
+
+// Buttons
+
+.button {
+	cursor: pointer !important;
 }
 
 // Selection

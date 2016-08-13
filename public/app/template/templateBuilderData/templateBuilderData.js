@@ -8,7 +8,7 @@
 	    
 		return {
 			restrict: 'E',
-			templateUrl: 'app/templateBuilder/templateBuilderData/templateBuilderData.html',
+			templateUrl: 'app/template/templateBuilderData/templateBuilderData.html',
 			link: link,
 			controller: controller
 		}
