@@ -1,0 +1,47 @@
+// Imports 
+
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/animations';
+
+.template-objects.bar {
+    position:relative;
+    .bar-menu-block {
+        background-color:$chimpBackground;
+        padding:30px;
+        margin-bottom: 54px;
+        .bar-menu-image img {
+            width: 55px;
+            margin-top: 9px;
+        }
+        .bar-menu-x, .bar-menu-y, .bar-menu-series {
+            display:inline-block;
+            font-size: 14px;
+            font-weight: 200;
+        }
+        .bar-menu-series {
+            .data-box {
+                width: 256px;
+                margin-right:0px;
+            }
+        }
+        .data-box {
+            background-color: white;
+            width: 93px;
+            min-height: 46px;
+            margin-right:10px;
+            margin-top: 8px;
+        }
+    }
+    .bar-menu-header {
+        color: $highlight1;
+        font-weight: 200;
+        line-height:1;
+        border-bottom: 1px solid $highlight1;
+        font-size: 18px;
+        width:100%;
+        outline:none;
+        margin-bottom:28px;
+        padding:10px 0px;
+    }
+}

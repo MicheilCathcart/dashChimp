@@ -4,7 +4,7 @@
 @import '../../../scss/mixins';
 @import '../../../scss/animations';
 
-.template-objects-header {
+.template-objects.header {
     position:relative;
     .editable {
         color: $highlight1;
@@ -17,23 +17,5 @@
         text-transform:uppercase;
         outline:none;
         margin-bottom:54px;
-    }
-    &:hover{
-        background-color:$chimpBackground;
-        .delete {
-            display:block;
-        }
-    }
-    .delete {
-        display:none;
-        cursor:pointer;
-        position: absolute;
-        max-height:100%;
-        top: 0;
-        right: 0;
-        background-color: rgb(249, 100, 76);
-        color: #ffffff;
-        font-size: 12px;
-        padding: 4px 6px;
     }
 }

@@ -56,7 +56,7 @@
 
 .template-area {
   background-color: white;
-  padding: 86px;
+  padding: 74px;
   position: relative;
   width: 80%;
   max-width: 765px;
@@ -128,3 +128,53 @@
   font-family: 'Lato', sans-serif; }
 .dataset .cell-overlay {
   color: transparent; }
+
+.template-objects:hover .delete {
+  display: block; }
+.template-objects .delete {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f9644c;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 3px 3px;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%; }
+.template-objects .drag {
+  display: block;
+  cursor: move;
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: -36px;
+  color: #f9f9f9;
+  font-size: 19px;
+  text-align: center;
+  width: 22px;
+  height: 22px; }
+
+.data-box {
+  padding: 0px 7px 7px 7px; }
+  .data-box:after {
+    content: '';
+    display: block;
+    clear: both; }
+  .data-box .databox-object {
+    float: left;
+    font-size: 9px;
+    text-align: center;
+    width: 76px;
+    height: 32px;
+    color: white;
+    margin-right: 7px;
+    margin-top: 7px; }
+    .data-box .databox-object:nth-child(3n+3) {
+      margin-right: 0px; }
+
+.sortable-placeholder {
+  background-color: #F9F9F9; }

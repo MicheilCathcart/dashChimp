@@ -3,9 +3,9 @@
 .animate {
   transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; }
 
-.template-objects-subheader {
+.template-objects.subheader {
   position: relative; }
-  .template-objects-subheader .editable {
+  .template-objects.subheader .editable {
     color: #757575;
     line-height: 1.4;
     border: 0px;
@@ -15,18 +15,3 @@
     width: 100%;
     outline: none;
     margin-bottom: 54px; }
-  .template-objects-subheader:hover {
-    background-color: #F9F9F9; }
-    .template-objects-subheader:hover .delete {
-      display: block; }
-  .template-objects-subheader .delete {
-    display: none;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-height: 100%;
-    background-color: #f9644c;
-    color: #ffffff;
-    font-size: 12px;
-    padding: 2px 6px; }

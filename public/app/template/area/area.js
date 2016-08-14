@@ -2,7 +2,7 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('templateArea', ['$log','$compile', function($log,$compile) {
+    module.directive('templateArea', ['$log','$compile','$timeout', function($log, $compile, $timeout) {
 		
 		$log.info('templateArea')
 	    
@@ -15,10 +15,28 @@
 		
 		function controller ($scope, $element) {
 
+            // Make Data Box droppable
+
+            function boxDroppable () {
+                $( ".data-box" ).droppable({
+                    accept: ".template-data-object",
+                    drop: function( event, ui ) {
+                        var target = $(event.target);
+                        var className = ui.helper[0].dataset.class;
+                        var fieldName = ui.helper[0].dataset.fieldName;
+                        var template = '<div class="' + className + ' coloured databox-object"><div class="vertical-align">' + fieldName + '</div></div>';
+                        console.log(className);
+                        console.log(fieldName);
+                        target.append(template);
+                    }
+                });
+            }
+
+            // Left Menu
 
             $( ".template-object" ).draggable({
-                connectToSortable: "#sortable",
-                helper: "clone"
+                helper: "clone",
+                zIndex: 100
             });
 
             $( ".template-area" ).droppable({
@@ -29,17 +47,33 @@
                 var template = ui.helper[0].dataset.template;
                 var el = $compile(template)($scope);
                 target.append(el[0]);
-
-                /*
-                angular.element(target).injector().invoke(function($compile) {
-                    var $scope = angular.element(target).scope();
-                    target.append($compile(template)($scope));
-                    // Finally, refresh the watch expressions in the new element
-                    $scope.$apply();
-                });*/
-
+                boxDroppable();
                 }
-            });        
+            });
+
+            // Right Menu
+
+            $( ".template-data-object" ).draggable({
+                helper: "clone",
+                zIndex: 100
+            });
+
+            $timeout(function() {
+                boxDroppable();
+            })
+
+            // Main Area
+
+            $( ".template-area" ).sortable({
+                handle: ".drag",
+                helper: "clone",
+                forceHelperSize: true,
+                forcePlaceholderSize: true,
+                items: ".template-objects",
+                revert: true,
+                axis: "y",
+                tolerance: "pointer"
+            });
 
 		}
 		

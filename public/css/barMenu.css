@@ -1,0 +1,37 @@
+/* Vertical Align */
+/* Animations */
+.animate {
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; }
+
+.template-objects.bar {
+  position: relative; }
+  .template-objects.bar .bar-menu-block {
+    background-color: #F9F9F9;
+    padding: 30px;
+    margin-bottom: 54px; }
+    .template-objects.bar .bar-menu-block .bar-menu-image img {
+      width: 55px;
+      margin-top: 9px; }
+    .template-objects.bar .bar-menu-block .bar-menu-x, .template-objects.bar .bar-menu-block .bar-menu-y, .template-objects.bar .bar-menu-block .bar-menu-series {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 200; }
+    .template-objects.bar .bar-menu-block .bar-menu-series .data-box {
+      width: 256px;
+      margin-right: 0px; }
+    .template-objects.bar .bar-menu-block .data-box {
+      background-color: white;
+      width: 93px;
+      min-height: 46px;
+      margin-right: 10px;
+      margin-top: 8px; }
+  .template-objects.bar .bar-menu-header {
+    color: #40B5C9;
+    font-weight: 200;
+    line-height: 1;
+    border-bottom: 1px solid #40B5C9;
+    font-size: 18px;
+    width: 100%;
+    outline: none;
+    margin-bottom: 28px;
+    padding: 10px 0px; }
