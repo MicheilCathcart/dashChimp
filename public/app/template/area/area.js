@@ -25,7 +25,7 @@
                 accept: ".template-object",
                 drop: function( event, ui ) {
 
-                var target = event.target;
+                var target = $(event.target);
                 var template = ui.helper[0].dataset.template;
                 var el = $compile(template)($scope);
                 target.append(el[0]);

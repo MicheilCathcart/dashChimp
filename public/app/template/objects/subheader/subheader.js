@@ -4,13 +4,12 @@ console.log('I Exist');
 
     var module = angular.module('app.dashboard');
 
-    module.directive('templateObjectsHeader', ['$log', function($log) {
+    module.directive('templateObjectsSubheader', ['$log', function($log) {
 		
-		$log.info('templateObjectsHeader')
 	    
 		return {
 			restrict: 'E',
-			templateUrl: 'app/template/objects/header/header.html',
+			templateUrl: 'app/template/objects/subheader/subheader.html',
 			replace: true,
 			scope: {},
 			controller: controller
@@ -18,7 +17,6 @@ console.log('I Exist');
 		
 		function controller ($scope, $element) {
 			
-            console.log('Header Created');
 			$scope.delete = function () {
 				$element.remove();
   				$scope.$destroy();

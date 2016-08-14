@@ -84,7 +84,8 @@
     width:80%;
     max-width:765px;
     margin: 68px auto;
-    height: 1500px;
+    height: auto;
+	min-height: 80vh;
     transition: transform 0.5s linear;
 	&.adjusted {
 		transform: translateX(-900px);
@@ -101,6 +102,7 @@
     position: absolute;
     padding: 48px 32px;
 	left: -196px;
+	top:0px;
 	.template-object {
 		margin-bottom: 32px;
 		cursor: move;
@@ -118,6 +120,7 @@
 	text-align:center;
     padding: 17px;
 	right: -196px;
+	top:0;
 	.template-data-object {
 		font-size: 12px;
 		height: 46px;
@@ -137,6 +140,7 @@
 	transform:translateY(-1000px);
 	position:absolute;
 	right:-782px;
+	top:0;
 	background-color:white;
 	width:522px;
 	height:600px;
