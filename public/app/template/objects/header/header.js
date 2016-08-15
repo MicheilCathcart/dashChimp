@@ -17,8 +17,13 @@ console.log('I Exist');
 		}
 		
 		function controller ($scope, $element) {
-			
-            console.log('Header Created');
+
+			// Import or define attributes
+
+			$scope.model = $scope.$parent.object || {
+				title:'Header'
+			};
+
 			$scope.delete = function () {
 				$element.remove();
   				$scope.$destroy();

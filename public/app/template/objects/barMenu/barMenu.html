@@ -1,7 +1,7 @@
 <div class="template-objects bar">
     <div class="bar-menu">
         <div contentEditable class="bar-menu-header">
-            Bar Graph Heading
+            {{ model.title }}
         </div>
         <div class="bar-menu-block">
             <div class="pull-left">
@@ -12,15 +12,21 @@
             <div class="pull-right">
                 <div class="bar-menu-x">
                     X
-                    <div class="data-box"></div>
+                    <div class="data-box">
+                        <div ng-if="model.x" class="{{ model.x.color }} coloured databox-object"><div class="vertical-align">{{ model.x.name }}</div></div>
+                    </div>
                 </div>
                 <div class="bar-menu-y">
                     Y
-                    <div class="data-box"></div>
+                    <div class="data-box">
+                        <div ng-if="model.y" class="{{ model.y.color }} coloured databox-object"><div class="vertical-align">{{ model.y.name }}</div></div>
+                    </div>
                 </div>
                 <div class="bar-menu-series">
                     Series
-                    <div class="data-box"></div>
+                    <div class="data-box">
+                        <div ng-if="model.series.length > 0" ng-repeat="box in model.series" class="{{ box.color }} coloured databox-object"><div class="vertical-align">{{ box.name }}</div></div>
+                    </div>
                 </div>
             </div>
             <div class="clearfix"></div>

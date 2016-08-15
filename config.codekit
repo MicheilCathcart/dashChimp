@@ -82,6 +82,17 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/public\/app\/directives\/compile.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/app\/directives\/compile.js",
+		"outputAbbreviatedPath": "\/public\/app\/directives\/min\/compile-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
 	"\/public\/app\/filters\/alphabetFilter.js": {
 		"fileType": 64,
 		"ignore": 1,

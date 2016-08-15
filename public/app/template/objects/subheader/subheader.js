@@ -16,7 +16,11 @@ console.log('I Exist');
 		}
 		
 		function controller ($scope, $element) {
-			
+
+			$scope.model = $scope.$parent.object || {
+				title:'This is the subheader'
+			};
+
 			$scope.delete = function () {
 				$element.remove();
   				$scope.$destroy();

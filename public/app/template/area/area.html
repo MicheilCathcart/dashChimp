@@ -48,12 +48,13 @@
 			</div>
 		</div>
 
-		<template-objects-bar></template-objects-bar>
+		<!-- Output Templates -->
+
+		<div ng-repeat="object in template" compile="object.template"></div>
 
 		<!-- Edit Fields -->
 
 		<div class="edit-fields">
-
 		</div>
         
 </div>

@@ -15,23 +15,6 @@
 		
 		function controller ($scope, $element) {
 
-            // Make Data Box droppable
-
-            function boxDroppable () {
-                $( ".data-box" ).droppable({
-                    accept: ".template-data-object",
-                    drop: function( event, ui ) {
-                        var target = $(event.target);
-                        var className = ui.helper[0].dataset.class;
-                        var fieldName = ui.helper[0].dataset.fieldName;
-                        var template = '<div class="' + className + ' coloured databox-object"><div class="vertical-align">' + fieldName + '</div></div>';
-                        console.log(className);
-                        console.log(fieldName);
-                        target.append(template);
-                    }
-                });
-            }
-
             // Left Menu
 
             $( ".template-object" ).draggable({
@@ -47,7 +30,6 @@
                 var template = ui.helper[0].dataset.template;
                 var el = $compile(template)($scope);
                 target.append(el[0]);
-                boxDroppable();
                 }
             });
 
@@ -57,10 +39,6 @@
                 helper: "clone",
                 zIndex: 100
             });
-
-            $timeout(function() {
-                boxDroppable();
-            })
 
             // Main Area
 
@@ -74,6 +52,70 @@
                 axis: "y",
                 tolerance: "pointer"
             });
+            
+            // Example Model 
+
+            var model = [
+                {
+                    template:'<template-objects-header ng-model="object"></template-objects-header>',
+                    title:'Best Header Yet',
+                    order: 1
+                },
+                {
+                    template:'<template-objects-subheader ng-model="object"></template-objects-subheader>',
+                    title:'Best Sub Header Yet',
+                    order: 2
+                },
+                {
+                    template:'<template-objects-bar ng-model="object"></template-objects-bar>',
+                    title:'Sales Per Quarter',
+                    x: { name: 'DATE', color: 'default'},
+                    y: { name: 'DATA 1', color: 'A'},
+                    series:[
+                        {
+                            name:'DATA 7',
+                            color:'G'
+                        },
+                        {
+                            name:'DATA 2',
+                            color:'B'
+                        },
+                        {
+                            name:'DATA 3',
+                            color:'C'
+                        }
+                    ],
+                    order: 3
+                },
+                {
+                    template:'<template-objects-bar ng-model="object"></template-objects-bar>',
+                    title:'Sales Per Annum',
+                    x: { name: 'DATE', color: 'default'},
+                    y: { name: 'DATA 4', color: 'D'},
+                    series:[
+                        {
+                            name:'DATA 3',
+                            color:'C'
+                        },
+                        {
+                            name:'DATA 4',
+                            color:'D'
+                        },
+                        {
+                            name:'DATA 5',
+                            color:'E'
+                        },
+                        {
+                            name:'DATA 1',
+                            color:'A'
+                        }
+                    ],
+                    order: 4
+                }
+            ];
+
+            // Order Template Before Render
+            $scope.template = _.orderBy(model, ['order'], ['asc']) 
 
 		}
 		
