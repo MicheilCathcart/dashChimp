@@ -1,12 +1,8 @@
 (function() {
 
-console.log('I Exist');
-
     var module = angular.module('app.dashboard');
 
     module.directive('templateObjectsHeader', ['$log', function($log) {
-		
-		$log.info('templateObjectsHeader')
 	    
 		return {
 			restrict: 'E',

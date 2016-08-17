@@ -20,7 +20,7 @@ app.config([
 		$stateProvider
             .state('templateBuilder', {
 				url:'/template-builder/',
-				templateUrl:'../app/template/template.html',
+				templateUrl:'app/template/template.html',
 				controller: 'template'
 			});
 			
@@ -29,6 +29,8 @@ app.config([
 	}
 ])
 
-app.config(["$locationProvider", function($locationProvider) {
+/* Remove the # from URL's' */
+
+/*app.config(["$locationProvider", function($locationProvider) {
   $locationProvider.html5Mode(true);
-}]);
+}]);*/

@@ -1,7 +1,5 @@
 (function() {
 
-console.log('I Exist');
-
     var module = angular.module('app.dashboard');
 
     module.directive('templateObjectsSubheader', ['$log', function($log) {

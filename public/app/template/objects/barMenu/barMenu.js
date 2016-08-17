@@ -37,10 +37,9 @@
 			});
 
 			$('.databox').on('click','.databox-object', function() {
-				console.log('Okay!');
 				$scope.$apply(function(){
       				// perform any model changes or method invocations here on angular app.
-					  console.log('Yeahhhs');
+
     			});
 				
 			})
