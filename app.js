@@ -10,24 +10,24 @@
 // Get the dependencies
 
 var express = require('express'),
-	pg = require('pg'),
-	path = require('path'),
-    bodyParser = require('body-parser');
+        pg = require('pg'),
+        path = require('path'),
+        bodyParser = require('body-parser');
 
 // Connect to the database
 
 
 var connectionString = "pg://localhost:5432/dashchimp",
-	client = new pg.Client(connectionString); 
+	db = new pg.Client(connectionString); 
 
-client.connect(function(err,win) {
-	console.log('Connected to:',win.connectionParameters);
+db.connect(function(err,win) {
+	// console.log('Connected to:',win.connectionParameters);
   if(err) {
     return console.error('could not connect to dashchimp local database', err);
   }
 });
 
-// New instance of Express
+// New instance of Express Dashchimp
 
 var app = express();
 
@@ -67,7 +67,7 @@ router.route('/template')
 
                 console.log("/template");
 		
-                var query = client.query("SELECT * FROM template");
+                var query = db.query("SELECT * FROM template");
                 
                 query.on("row", function (row, result) {
                 result.addRow(row);
@@ -81,7 +81,7 @@ router.route('/template')
 
 // Update The Template
 
-router.route('/template/update/:id')
+router.route('/template/update')
         .put(function(req, res){
                 
                 console.log("/template/update");
@@ -92,16 +92,18 @@ router.route('/template/update/:id')
                         user_id: req.body.user_id, 
                         structure: req.body.structure
                         };
+
+                        console.log(data);
                 
                 // SQL Query > Update Data
-                client.query("INSERT INTO comments(id, user_id, structure) values($1, $2, $3) returning *", 
-                [data.id,
-                data.user_id, 
-                data.structure], 
+                db.query("UPDATE template SET structure = $1 WHERE id = $2", 
+                [data.structure, data.id], 
                 function(err, result) {
                         console.log(err);
                         console.log(result);
                         res.json(result.rows, null, "    ");
                 }
                 );
+
+
         });

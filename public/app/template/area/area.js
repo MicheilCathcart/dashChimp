@@ -2,7 +2,7 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('templateArea', ['$log','$compile','$timeout','read', function($log, $compile, $timeout, read) {
+    module.directive('templateArea', ['$log','$compile','$timeout','read','update', function($log, $compile, $timeout, read, update) {
 	    
 		return {
 			restrict: 'E',
@@ -19,10 +19,12 @@
 
                 read.template().success(function(data){
 
-                    $scope.model = data[0].structure;
+                    $scope.model = data[0];
+
+                    console.log($scope.model);
 
                     // Order Template Before Render
-                    $scope.template = _.orderBy($scope.model, ['order'], ['asc']) 
+                    $scope.template = _.orderBy($scope.model.structure, ['order'], ['asc']) 
 
                 })
             
@@ -34,12 +36,17 @@
             
             var updateTemplate = function () {
 
-                update.template().success(function(data){
+                console.log('$scope.model');
+                console.log($scope.model);
 
-                    $scope.model = data[0].structure;
+                update.template($scope.model).success(function(data){
+
+                    console.log('Template Updated!');
+
+                    /*$scope.model = data[0];
 
                     // Order Template Before Render
-                    $scope.template = _.orderBy($scope.model, ['order'], ['asc']) 
+                    $scope.template = _.orderBy($scope.model.structure, ['order'], ['asc']) */
 
                 })
             
@@ -70,6 +77,14 @@
                 zIndex: 100
             });
 
+            // Array to object
+            function toObject(arr) {
+                var rv = {};
+                for (var i = 0; i < arr.length; ++i)
+                    if (arr[i] !== undefined) rv[i] = arr[i];
+                return rv;
+            }
+
             // Main Area
 
             $( ".template-area" ).sortable({
@@ -77,15 +92,29 @@
                 helper: "clone",
                 forceHelperSize: true,
                 forcePlaceholderSize: true,
-                items: ".template-objects",
+                items: ".area-object",
                 revert: true,
                 axis: "y",
                 tolerance: "pointer",
-                update: function( event, ui ) { console.log('Updating'); }
+                update: function( event, ui ) { 
+                    // Update the Model Order
+                    _.each($('.area-object'), function (o, i) {
+
+                        // Loops though object in current DOM order
+
+                        // Find objects original order
+                        var originalOrder = $(o).data().order;
+
+                        // Find this DOM object in the array and make it's new order the index
+                        $scope.model.structure[originalOrder].order = i;
+                        
+                    })
+
+                    // Re-order the structure by it's new order so it is ordered correctly in the database
+                    $scope.model.structure = toObject(_.orderBy($scope.model.structure, ['order'], ['asc']));
+                    updateTemplate();
+                }
             });
-
-
-            
             
             // Example Model 
 

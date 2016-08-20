@@ -50,7 +50,7 @@
 
 		<!-- Output Templates -->
 
-		<div ng-repeat="object in template" compile="object.template"></div>
+		<div ng-repeat="object in template" class="area-object" data-order="{{ object.order }} " compile="object.template"></div>
 
 		<!-- Edit Fields -->
 

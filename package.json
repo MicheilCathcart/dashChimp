@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.3.4",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
-    "gulp-nodemon": "^2.0.4"
+    "gulp-nodemon": "^2.0.4",
+    "pg-promise": "^3.2.3"
   }
 }

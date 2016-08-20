@@ -7,10 +7,11 @@
 	    function($http) {
 			
 			 return {
-    			template: function() {
+    			template: function(model) {
 					return $http({
 						url: '/api/template/update',
-						method: 'POST'
+						method: 'PUT',
+						data: model
 					})
     			}
  			}
