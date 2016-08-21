@@ -28,6 +28,33 @@
                     // Order Template Before Render
                     templateArea.template = _.orderBy(templateArea.model.structure, ['order'], ['asc']) 
 
+                    // The same function is called both times.
+                    templateArea.addHeader = function (object) {
+                        // var index = _.size(templateArea.model.structure);
+                        object.template.push({
+                            order: 5,
+                            template: "<template-objects-header></template-objects-header>",
+                            title: "New Header"
+                        })
+                        console.log('Template');
+                        console.log(object);
+                    }
+
+                    // This seems to create another version of the controller and updates that? 
+                    $( ".template-area" ).droppable({
+                        accept: ".template-object",
+                        drop: function( event, ui ) {
+                            //var target = $(event.target);
+                            //var template = ui.helper[0].dataset.template;
+                            //var el = $compile(template)($scope);
+                            //target.append(el[0]);
+                            templateArea.addHeader(templateArea);
+                        }
+                    });
+
+                    // This works and updates the scope
+                    templateArea.addHeader(templateArea);
+
                 })
             
             }
@@ -36,21 +63,22 @@
 
             // Update the Template
             
-            templateArea.updateTemplate = function () {
+            templateArea.updateTemplate = function (model) {
 
-                console.log('Successful Scope Change?');
-                console.log(templateArea.model);
-
-                update.template(templateArea.model).success(function(data){
-
-                    /*$scope.model = data[0];
-
-                    // Order Template Before Render
-                    $scope.template = _.orderBy($scope.model.structure, ['order'], ['asc']) */
+                update.template(model).success(function(data){
 
                 })
             
             }
+
+
+
+            /*$scope.$watchCollection('templateArea.template',
+                    function(newValue, oldValue ){
+                        console.log('Watch Fired');
+                        console.log(oldValue);
+                        console.log(newValue);
+                    });*/
 
             // Left Menu
 
@@ -59,18 +87,7 @@
                 zIndex: 100
             });
 
-            $( ".template-area" ).droppable({
-                accept: ".template-object",
-                drop: function( event, ui ) {
-
-                var target = $(event.target);
-                var template = ui.helper[0].dataset.template;
-                console.log(template);
-                var el = $compile(template)($scope);
-                target.append(el[0]);
-
-                }
-            });
+            
 
             // Right Menu
 
@@ -86,6 +103,8 @@
                     if (arr[i] !== undefined) rv[i] = arr[i];
                 return rv;
             }
+
+            var fun = [{ number: 1 }];
 
             // Main Area
 
@@ -114,7 +133,8 @@
 
                     // Re-order the structure by it's new order so it is ordered correctly in the database
                     templateArea.model.structure = toObject(_.orderBy(templateArea.model.structure, ['order'], ['asc']));
-                    templateArea.updateTemplate();
+                    templateArea.updateTemplate(templateArea.model);
+
                 }
             });
             
