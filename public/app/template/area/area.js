@@ -8,40 +8,40 @@
 			restrict: 'E',
 			templateUrl: 'app/template/area/area.html',
             replace:true,
+            controllerAs: 'templateArea',
+            bindToController: true,
 			controller: controller
 		}
 		
 		function controller ($scope, $element) {
 
+            var templateArea = this;
+
             // Read the Template
             
-            var readTemplate = function () {
+            templateArea.readTemplate = function () {
 
                 read.template().success(function(data){
 
-                    $scope.model = data[0];
-
-                    console.log($scope.model);
+                    templateArea.model = data[0];
 
                     // Order Template Before Render
-                    $scope.template = _.orderBy($scope.model.structure, ['order'], ['asc']) 
+                    templateArea.template = _.orderBy(templateArea.model.structure, ['order'], ['asc']) 
 
                 })
             
             }
 
-            readTemplate();
+            templateArea.readTemplate();
 
             // Update the Template
             
-            var updateTemplate = function () {
+            templateArea.updateTemplate = function () {
 
-                console.log('$scope.model');
-                console.log($scope.model);
+                console.log('Successful Scope Change?');
+                console.log(templateArea.model);
 
-                update.template($scope.model).success(function(data){
-
-                    console.log('Template Updated!');
+                update.template(templateArea.model).success(function(data){
 
                     /*$scope.model = data[0];
 
@@ -65,8 +65,10 @@
 
                 var target = $(event.target);
                 var template = ui.helper[0].dataset.template;
+                console.log(template);
                 var el = $compile(template)($scope);
                 target.append(el[0]);
+
                 }
             });
 
@@ -106,13 +108,13 @@
                         var originalOrder = $(o).data().order;
 
                         // Find this DOM object in the array and make it's new order the index
-                        $scope.model.structure[originalOrder].order = i;
+                        templateArea.model.structure[originalOrder].order = i;
                         
                     })
 
                     // Re-order the structure by it's new order so it is ordered correctly in the database
-                    $scope.model.structure = toObject(_.orderBy($scope.model.structure, ['order'], ['asc']));
-                    updateTemplate();
+                    templateArea.model.structure = toObject(_.orderBy(templateArea.model.structure, ['order'], ['asc']));
+                    templateArea.updateTemplate();
                 }
             });
             

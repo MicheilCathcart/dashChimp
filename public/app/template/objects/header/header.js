@@ -9,16 +9,49 @@
 			templateUrl: 'app/template/objects/header/header.html',
 			replace: true,
 			scope: {},
-			controller: controller
+			require: '^templateArea',
+			controller: controller,
+			link: link
 		}
 		
 		function controller ($scope, $element) {
+
+		}
+
+		function link ($scope, $element, attrs, $ctrl) {
+
+			console.log('ctrl');
+			console.log($ctrl);
 
 			// Import or define attributes
 
 			$scope.model = $scope.$parent.object || {
 				title:'Header'
 			};
+
+			// Text Area Automatic Resize
+
+			function h(e) {
+    			$(e).css({'height':'auto','overflow-y':'hidden'}).height(e.scrollHeight);
+			}
+			$('textarea').each(function () {
+				h(this);
+			}).on('input', function () {
+				h(this);
+			});
+
+			/*
+			$('.editable').on('keyup', function(e) {
+				$scope.$apply(function() {
+					console.log(e.target);
+				$scope.model.title = e.target.innerHTML;
+				});
+			})*/
+
+			$scope.onChange = function() {
+				console.log('Changing');
+				console.log($scope.model.title);
+			}
 
 			$scope.delete = function () {
 				$element.remove();
