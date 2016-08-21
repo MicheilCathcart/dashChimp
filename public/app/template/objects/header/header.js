@@ -10,18 +10,13 @@
 			replace: true,
 			scope: {},
 			require: '^templateArea',
-			controller: controller,
 			link: link
 		}
-		
-		function controller ($scope, $element) {
 
-		}
+		function link ($scope, $element, attrs, templateArea) {
 
-		function link ($scope, $element, attrs, $ctrl) {
-
-			console.log('ctrl');
-			console.log($ctrl);
+			console.log('templateArea');
+			console.log(templateArea);
 
 			// Import or define attributes
 
@@ -31,6 +26,7 @@
 
 			// Text Area Automatic Resize
 
+			/*
 			function h(e) {
     			$(e).css({'height':'auto','overflow-y':'hidden'}).height(e.scrollHeight);
 			}
@@ -38,7 +34,7 @@
 				h(this);
 			}).on('input', function () {
 				h(this);
-			});
+			});*/
 
 			/*
 			$('.editable').on('keyup', function(e) {

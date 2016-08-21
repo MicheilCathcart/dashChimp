@@ -15,4 +15,7 @@
     width: 100%;
     text-transform: uppercase;
     outline: none;
-    margin-bottom: 54px; }
+    overflow: hidden;
+    resize: none;
+    margin-bottom: 54px;
+    height: 80px; }

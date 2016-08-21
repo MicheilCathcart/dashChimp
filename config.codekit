@@ -104,6 +104,17 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
+	"\/public\/app\/directives\/elastic.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/app\/directives\/elastic.js",
+		"outputAbbreviatedPath": "\/public\/app\/directives\/min\/elastic-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
 	"\/public\/app\/factories\/read.js": {
 		"fileType": 64,
 		"ignore": 1,
