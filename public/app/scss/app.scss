@@ -56,7 +56,7 @@ input[type=number] {
 
 .primary {
 	background-color: $chimpPrimary;
-} 
+}
 
 // Vertical Align
 
@@ -76,6 +76,10 @@ body {
 	font-size: 12px;
 	background-color: $chimpBackground;
     font-weight: 300;
+}
+
+input, textarea, select {
+	font-family: 'Lato', sans-serif; 
 }
 
 

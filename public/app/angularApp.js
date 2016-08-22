@@ -20,8 +20,7 @@ app.config([
 		$stateProvider
             .state('templateBuilder', {
 				url:'/template-builder/',
-				templateUrl:'app/template/template.html',
-				controller: 'template'
+				template:'<template></template>',
 			});
 			
 			$urlRouterProvider.otherwise('/template-builder/');
