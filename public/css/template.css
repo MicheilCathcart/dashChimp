@@ -1,0 +1,180 @@
+/* Vertical Align */
+/* Animations */
+.animate {
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; }
+
+.dashboard-header {
+  height: 42px;
+  border-bottom: 1px solid #C2B1A4; }
+  .dashboard-header .header-button {
+    width: 76px;
+    height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-right: 1px solid #C2B1A4;
+    text-transform: uppercase; }
+    .dashboard-header .header-button.cog {
+      border-left: 1px solid #C2B1A4; }
+    .dashboard-header .header-button.no-border {
+      border-right: 0px; }
+    .dashboard-header .header-button.date-range {
+      width: 152px;
+      font-size: 9px; }
+    .dashboard-header .header-button:hover {
+      background-color: #FFFFFF;
+      cursor: pointer;
+      border-bottom: 1px solid #C2B1A4; }
+  .dashboard-header .header-title {
+    height: 42px;
+    overflow: hidden;
+    width: 430px;
+    text-align: left;
+    display: inline-block;
+    text-transform: uppercase; }
+    .dashboard-header .header-title:hover {
+      background-color: #FFFFFF;
+      cursor: text;
+      border-bottom: 1px solid #C2B1A4; }
+      .dashboard-header .header-title:hover .title .edit {
+        color: #8D6647; }
+    .dashboard-header .header-title .title .edit {
+      position: absolute;
+      right: 25px;
+      top: 12px;
+      color: #F9F9F9; }
+    .dashboard-header .header-title .title input {
+      padding: 0px 25px;
+      height: 41px;
+      width: 100%;
+      text-transform: uppercase; }
+      .dashboard-header .header-title .title input:focus {
+        background-color: #FFFFFF; }
+        .dashboard-header .header-title .title input:focus + .edit {
+          color: #8D6647; }
+      .dashboard-header .header-title .title input:hover {
+        background-color: #FFFFFF; }
+
+.template-area {
+  background-color: white;
+  padding: 74px;
+  position: relative;
+  width: 80%;
+  max-width: 765px;
+  margin: 68px auto;
+  height: auto;
+  min-height: 80vh;
+  transition: transform 0.5s linear; }
+  .template-area.adjusted {
+    transform: translateX(-900px); }
+    .template-area.adjusted .edit-fields {
+      transform: translateY(0px); }
+
+.template-menu-left {
+  background-color: white;
+  position: absolute;
+  padding: 48px 32px;
+  left: -196px;
+  top: 0px; }
+  .template-menu-left .template-object {
+    margin-bottom: 32px;
+    cursor: move; }
+    .template-menu-left .template-object:last-child {
+      margin-bottom: 0px; }
+
+.template-menu-right {
+  background-color: white;
+  position: absolute;
+  text-align: center;
+  padding: 17px;
+  right: -196px;
+  top: 0; }
+  .template-menu-right .template-data-object {
+    font-size: 12px;
+    height: 46px;
+    width: 101px;
+    margin-bottom: 17px;
+    cursor: move; }
+    .template-menu-right .template-data-object:last-child {
+      margin-bottom: 0px; }
+
+.edit-fields {
+  transition: transform 0.5s linear;
+  transform: translateY(-1000px);
+  position: absolute;
+  right: -782px;
+  top: 0;
+  background-color: white;
+  width: 522px;
+  height: 600px; }
+
+.syntax {
+  font-weight: 500; }
+
+.dataset .cell-underlay {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 11px;
+  z-index: 0;
+  pointer-events: none;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8D6647;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif; }
+.dataset .cell-overlay {
+  color: transparent; }
+
+.template-objects:hover .delete {
+  display: block; }
+.template-objects .delete {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f9644c;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 3px 3px;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%; }
+.template-objects .drag {
+  display: block;
+  cursor: move;
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: -36px;
+  color: #f9f9f9;
+  font-size: 19px;
+  text-align: center;
+  width: 22px;
+  height: 22px; }
+
+.data-box {
+  padding: 0px 7px 7px 7px; }
+  .data-box:after {
+    content: '';
+    display: block;
+    clear: both; }
+  .data-box .databox-object {
+    float: left;
+    font-size: 9px;
+    text-align: center;
+    width: 76px;
+    height: 32px;
+    color: white;
+    margin-right: 7px;
+    margin-top: 7px; }
+    .data-box .databox-object:nth-child(3n+3) {
+      margin-right: 0px; }
+
+.sortable-placeholder {
+  background-color: #F9F9F9; }
