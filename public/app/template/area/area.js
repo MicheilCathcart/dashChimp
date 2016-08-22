@@ -17,6 +17,14 @@
 
             var templateArea = this;
 
+            // Array to object
+            function toObject(arr) {
+                var rv = {};
+                for (var i = 0; i < arr.length; ++i)
+                    if (arr[i] !== undefined) rv[i] = arr[i];
+                return rv;
+            }
+
             // Read the Template
             
             templateArea.readTemplate = function () {
@@ -26,7 +34,7 @@
                     templateArea.model = data[0];
 
                     // Order Template Before Render
-                    templateArea.model.structure = _.orderBy(templateArea.model.structure, ['order'], ['asc']) 
+                    templateArea.model.structure = toObject(_.orderBy(templateArea.model.structure, ['order'], ['asc'])); 
 
                 })
             
@@ -47,13 +55,49 @@
             
             }
 
+
+            // Add Header
             addHeader = function() {
                 var index = _.size(templateArea.model.structure);
-                templateArea.model.structure.push({
+                templateArea.model.structure[index] = {
                     order: index,
                     template: "<template-objects-header></template-objects-header>",
-                    title: "New Header Yeah!"
-                })
+                    title: "New Header"
+                }
+            }
+
+            // Add Sub Header
+            addSubHeader = function() {
+                var index = _.size(templateArea.model.structure);
+                templateArea.model.structure[index] = {
+                    order: index,
+                    template: "<template-objects-subheader></template-objects-subheader>",
+                    title: "This is a sub-header, it can also be used to output the result of a function (There will be COUNT(DATA 1) Sales this year)"
+                }
+            }
+
+            // Add Bar Graph
+            addBarGraph = function() {
+                var index = _.size(templateArea.model.structure);
+                templateArea.model.structure[index] = {
+                    order: index,
+                    series: [],
+                    template: "<template-objects-bar></template-objects-bar>",
+                    title: "Bar Graph Heading - Click to Edit",
+                    x: {},
+                    y: {}
+                }
+            }
+
+            // Add Pie Graph
+            addPieGraph = function() {
+                var index = _.size(templateArea.model.structure);
+                templateArea.model.structure[index] = {
+                    order: index,
+                    series: [],
+                    template: "<template-objects-pie></template-objects-pie>",
+                    title: "Pie Graph Heading - Click to Edit"
+                }
             }
 
             // Main Area
@@ -62,17 +106,25 @@
                 accept: ".template-object",
                 drop: function( event, ui ) {
 
-                    // Add Header
-                    $scope.$apply(addHeader());
+                    var objectType = $(ui.helper).data().template;
 
-                    // Add Sub-Header
-                    $scope.$apply(addSubHeader());
-
-                    // Add Bar Graph
-                    $scope.$apply(addSubHeader());
-
-                    // Add Pie Graph
-                    $scope.$apply(addSubHeader());
+                    switch (objectType) {
+                        case "header":
+                            console.log('Header');
+                            $scope.$apply(addHeader());
+                            break;
+                        case "subheader":
+                        console.log('sub');
+                            $scope.$apply(addSubHeader());
+                            break;
+                        case "bargraph":
+                        console.log('bar');
+                            $scope.$apply(addBarGraph());
+                            break;
+                        case "piegraph":
+                        console.log('pie');
+                            // $scope.$apply(addPieGraph());
+                    }
 
                     templateArea.updateTemplate();
 
@@ -92,14 +144,6 @@
                 helper: "clone",
                 zIndex: 100
             });
-
-            // Array to object
-            function toObject(arr) {
-                var rv = {};
-                for (var i = 0; i < arr.length; ++i)
-                    if (arr[i] !== undefined) rv[i] = arr[i];
-                return rv;
-            }
 
             // Main Area
 
