@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js"></script>
+
+    <!-- Angular -->
+    <script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+
+    <script>
+    var myApp = angular.module('myApp',[]);
+
+    (function() {
+    myApp.directive('list', function() {
+
+    return {
+        restrict: 'E',
+        template: '<div><div class="new-person-click" ng-click="vm.addPerson()">NEW PERSON (Click to create)</div><div class="person" ng-repeat="person in vm.list.sublist">{{ person.name }}</div></div>',
+        scope: {},
+        controllerAs: 'vm',
+        bindToController: true,
+        replace: true,
+        controller: controller
+    }
+
+    function controller($scope, $element) {
+    
+        var vm = this;
+        vm.list = {
+            sublist: []
+        }
+    
+        vm.list.sublist = [
+        {name:'Julie'},
+        {name:'Bob'},
+        {name:'Jim'},
+        {name:'Tim'},
+        {name:'Angelie'}
+        ]
+        
+        function updateList() {
+        vm.list.sublist.push({name:'New Person'});
+        }
+        
+        vm.addPerson = function() {
+        updateList();
+        }
+        
+        $('.new-person').draggable();
+        
+        $('.container').droppable({
+            accept: ".new-person",
+            drop: function(event, ui) {
+            $scope.$apply(updateList());
+        }
+        })
+        
+    }
+
+
+    });
+
+    })();
+
+</script>
+
+<style>
+.person {
+  padding: 20px 30px;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid white;
+  margin-bottom:10px;
+}
+
+.new-person {
+  padding: 20px 30px;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #e2e3e4;
+  margin-bottom:10px;
+  cursor: move;
+  width:50%;
+}
+
+.new-person-click {
+  padding: 20px 30px;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #e2e3e4;
+  margin-bottom:10px;
+  cursor: pointer;
+  width:50%;
+}
+
+.container {
+  background-color: grey;
+  padding: 20px;
+  width:50%;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="new-person">
+NEW PERSON (Drag to List to create)
+</div>
+
+<div class="container">
+<list></list>
+</div>
+
+</body>
+</html>
+

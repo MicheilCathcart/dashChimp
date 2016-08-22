@@ -60,6 +60,11 @@ app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
+// The root of the site, get the index.html file for the angular app 
+app.get('/test', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/test.html'));
+});
+
 // Read The Template
 
 router.route('/template')

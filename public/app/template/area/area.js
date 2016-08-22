@@ -15,6 +15,8 @@
 		
 		function controller ($scope, $element) {
 
+            // https://fiddle.jshell.net/c1dpc7dr/7/
+
             var templateArea = this;
 
             // Read the Template
@@ -27,33 +29,6 @@
 
                     // Order Template Before Render
                     templateArea.template = _.orderBy(templateArea.model.structure, ['order'], ['asc']) 
-
-                    // The same function is called both times.
-                    templateArea.addHeader = function (object) {
-                        // var index = _.size(templateArea.model.structure);
-                        object.template.push({
-                            order: 5,
-                            template: "<template-objects-header></template-objects-header>",
-                            title: "New Header"
-                        })
-                        console.log('Template');
-                        console.log(object);
-                    }
-
-                    // This seems to create another version of the controller and updates that? 
-                    $( ".template-area" ).droppable({
-                        accept: ".template-object",
-                        drop: function( event, ui ) {
-                            //var target = $(event.target);
-                            //var template = ui.helper[0].dataset.template;
-                            //var el = $compile(template)($scope);
-                            //target.append(el[0]);
-                            templateArea.addHeader(templateArea);
-                        }
-                    });
-
-                    // This works and updates the scope
-                    templateArea.addHeader(templateArea);
 
                 })
             
@@ -71,14 +46,31 @@
             
             }
 
+            // Add header to the template
+            function addHeader() {
+                var index = _.size(templateArea.model.structure);
+                templateArea.template.push({
+                    order: index,
+                    template: "<template-objects-header></template-objects-header>",
+                    title: "New Header"
+                })
+            }
 
+            templateArea.addHeader = function() {
+                addHeader();
+            }
 
-            /*$scope.$watchCollection('templateArea.template',
-                    function(newValue, oldValue ){
-                        console.log('Watch Fired');
-                        console.log(oldValue);
-                        console.log(newValue);
-                    });*/
+            // This seems to create another version of the controller and updates that? 
+            $( ".template-area" ).droppable({
+                accept: ".template-object",
+                drop: function( event, ui ) {
+                    var target = $(event.target);
+                    var template = ui.helper[0].dataset.template;
+                    $scope.$apply(addHeader());
+                    //var el = $compile(template)($scope);
+                    //target.append(el[0]);
+                }
+            });
 
             // Left Menu
 
@@ -86,8 +78,6 @@
                 helper: "clone",
                 zIndex: 100
             });
-
-            
 
             // Right Menu
 
@@ -103,8 +93,6 @@
                     if (arr[i] !== undefined) rv[i] = arr[i];
                 return rv;
             }
-
-            var fun = [{ number: 1 }];
 
             // Main Area
 

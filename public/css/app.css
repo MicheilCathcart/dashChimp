@@ -130,3 +130,33 @@ input {
 
 .button {
   cursor: pointer !important; }
+
+.person {
+  padding: 20px 30px;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid white;
+  margin-bottom: 10px; }
+
+.new-person {
+  padding: 20px 30px;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #e2e3e4;
+  margin-bottom: 10px;
+  cursor: move;
+  width: 50%; }
+
+.new-person-click {
+  padding: 20px 30px;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #e2e3e4;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 50%; }
+
+.container {
+  background-color: grey;
+  padding: 20px;
+  width: 50%; }
