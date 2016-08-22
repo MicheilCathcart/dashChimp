@@ -26,7 +26,7 @@
                     templateArea.model = data[0];
 
                     // Order Template Before Render
-                    templateArea.template = _.orderBy(templateArea.model.structure, ['order'], ['asc']) 
+                    templateArea.model.structure = _.orderBy(templateArea.model.structure, ['order'], ['asc']) 
 
                 })
             
@@ -43,33 +43,47 @@
 
                 update.template(templateArea.model).success(function(data){
 
-                    /*$scope.model = data[0];
-
-                    // Order Template Before Render
-                    $scope.template = _.orderBy($scope.model.structure, ['order'], ['asc']) */
-
                 })
             
             }
+
+            addHeader = function() {
+                var index = _.size(templateArea.model.structure);
+                templateArea.model.structure.push({
+                    order: index,
+                    template: "<template-objects-header></template-objects-header>",
+                    title: "New Header Yeah!"
+                })
+            }
+
+            // Main Area
+
+            $( ".template-area" ).droppable({
+                accept: ".template-object",
+                drop: function( event, ui ) {
+
+                    // Add Header
+                    $scope.$apply(addHeader());
+
+                    // Add Sub-Header
+                    $scope.$apply(addSubHeader());
+
+                    // Add Bar Graph
+                    $scope.$apply(addSubHeader());
+
+                    // Add Pie Graph
+                    $scope.$apply(addSubHeader());
+
+                    templateArea.updateTemplate();
+
+                }
+            });
 
             // Left Menu
 
             $( ".template-object" ).draggable({
                 helper: "clone",
                 zIndex: 100
-            });
-
-            $( ".template-area" ).droppable({
-                accept: ".template-object",
-                drop: function( event, ui ) {
-
-                var target = $(event.target);
-                var template = ui.helper[0].dataset.template;
-                console.log(template);
-                var el = $compile(template)($scope);
-                target.append(el[0]);
-
-                }
             });
 
             // Right Menu
