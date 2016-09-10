@@ -8,7 +8,7 @@
 		bindings: {
 			templatePart: '<',
 			onDelete: '&',
-			onUpdate: '&'
+			onChange: '&'
 		}
 	});
 
@@ -23,8 +23,9 @@
 			ctrl.onDelete({templatePart: ctrl.newTemplatePart});
 		};
 
-		ctrl.update = function() {
-			ctrl.onUpdate({templatePart: ctrl.newTemplatePart});
+		ctrl.change = function() {
+			console.log('Call Change');
+			ctrl.onChange({templatePart: ctrl.newTemplatePart});
 		};
 
 		$( ".data-box" ).droppable({
@@ -38,7 +39,14 @@
 				}
 			});
 
-		console.log(ctrl);
+		// This will probably be re-thought
+
+		$('.databox').on('click','.databox-object', function() {
+				$scope.$apply(function(){
+      				// perform any model changes or method invocations here on angular app.
+
+    			});
+			})
 		
 	}
   

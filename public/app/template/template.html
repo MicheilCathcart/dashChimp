@@ -92,6 +92,7 @@
 			<template-objects-bar 
 				template-part="part"
 				on-delete="template.deleteFromTemplate(templatePart)"
+				on-change="template.changeTemplate(templatePart)"
 				ng-if="part.type === 'Bar Graph'">
 			</template-objects-bar>
 		</div>

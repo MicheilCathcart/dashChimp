@@ -48,8 +48,6 @@
             
             template.updateTemplate = function () {
 
-                console.log('Successful Scope Change?');
-                console.log(template.model);
 
                 update.template(template.model).success(function(data){
 
@@ -107,6 +105,21 @@
 
                 // Delete templatePart from structure
                 delete template.model.structure[templatePart.order];
+                
+                // Update the Database
+                template.updateTemplate();
+            }
+
+            // Change Template
+
+            template.changeTemplate = function(templatePart) {
+
+                console.log('Updating template');
+                console.log(templatePart);
+                console.log(template.model.structure[templatePart.order]);
+
+                // Delete templatePart from structure
+                template.model.structure[templatePart.order] = templatePart;
                 
                 // Update the Database
                 template.updateTemplate();

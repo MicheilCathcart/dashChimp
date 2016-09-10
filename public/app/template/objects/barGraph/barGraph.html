@@ -1,8 +1,6 @@
 <div class="template-objects bar">
     <div class="bar-menu">
-        <div contentEditable class="bar-menu-header">
-            {{ $ctrl.newTemplatePart.title }}
-        </div>
+        <input class="bar-menu-header" ng-model="$ctrl.newTemplatePart.title" ng-blur="$ctrl.change()">
         <div class="bar-menu-block">
             <div class="pull-left">
                 <div class="bar-menu-image">
