@@ -103,9 +103,13 @@
 
             // Delete from Template
 
-            template.deleteFromTemplate = function(item) {
-                console.log('Delete From Template');
-                console.log(template.model.structure)
+            template.deleteFromTemplate = function(templatePart) {
+
+                // Delete templatePart from structure
+                delete template.model.structure[templatePart.order];
+                
+                // Update the Database
+                template.updateTemplate();
             }
 
             // Main Area

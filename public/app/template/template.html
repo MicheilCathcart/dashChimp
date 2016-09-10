@@ -89,7 +89,11 @@
 		<div ng-repeat="part in template.model.structure" class="area-object" data-order="{{ part.order }}">
 			<template-objects-header template-part="part" ng-if="part.type === 'Header'"></template-objects-header>
 			<template-objects-subheader template-part="part" ng-if="part.type === 'Sub Header'"></template-objects-subheader>
-			<template-objects-bar template-part="part" ng-if="part.type === 'Bar Graph'"></template-objects-bar>
+			<template-objects-bar 
+				template-part="part"
+				on-delete="template.deleteFromTemplate(templatePart)"
+				ng-if="part.type === 'Bar Graph'">
+			</template-objects-bar>
 		</div>
 
 		<!-- Edit Fields -->
