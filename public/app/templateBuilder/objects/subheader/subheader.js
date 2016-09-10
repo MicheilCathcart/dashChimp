@@ -2,29 +2,29 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('templateObjectsHeader', ['$log', function($log) {
+    module.directive('templateObjectsSubheader', ['$log', function($log) {
 	    
 		return {
 			restrict: 'E',
-			templateUrl: 'app/template/objects/header/header.html',
+			templateUrl: 'app/templateBuilder/objects/subheader/subheader.html',
 			replace: true,
 			scope: {},
-			require: '^templateArea',
+			require: '^templateBuilder',
 			link: link
 		}
 
-		function link ($scope, $element, attrs, templateArea) {
+		function link ($scope, $element, attrs, templateBuilder) {
 
 			// Import or define attributes
 
 			$scope.model = $scope.$parent.object || {
-				title:'Header'
+				title:'This is the subheader'
 			};
 
 			// Text Area Automatic Resize
 
 			$scope.update = function() {
-				templateArea.updateTemplate();
+				templateBuilder.updateTemplate();
 			}
 
 			$scope.delete = function () {
