@@ -2,20 +2,20 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('templateBuilder', ['$log','$compile','$timeout','read','update', function($log, $compile, $timeout, read, update) {
+    module.directive('template', ['$log','$compile','$timeout','read','update', function($log, $compile, $timeout, read, update) {
 	    
 		return {
 			restrict: 'E',
-			templateUrl: 'app/templateBuilder/templateBuilder.html',
+			templateUrl: 'app/template/template.html',
             replace:true,
-            controllerAs: 'templateBuilder',
+            controllerAs: 'template',
             bindToController: true,
 			controller: controller
 		}
 		
 		function controller ($scope, $element) {
 
-            var templateBuilder = this;
+            var template = this;
 
             // Array to object
             function toObject(arr) {
@@ -25,33 +25,33 @@
                 return rv;
             }
 
-            templateBuilder.title = 'New Template Structure';
+            template.title = 'New Template Structure';
 
             // Read the Template
             
-            templateBuilder.readTemplate = function () {
+            template.readTemplate = function () {
 
                 read.template().success(function(data){
 
-                    templateBuilder.model = data[0];
+                    template.model = data[0];
 
                     // Order Template Before Render
-                    templateBuilder.model.structure = toObject(_.orderBy(templateBuilder.model.structure, ['order'], ['asc'])); 
+                    template.model.structure = toObject(_.orderBy(template.model.structure, ['order'], ['asc'])); 
 
                 })
             
             }
 
-            templateBuilder.readTemplate();
+            template.readTemplate();
 
             // Update the Template
             
-            templateBuilder.updateTemplate = function () {
+            template.updateTemplate = function () {
 
                 console.log('Successful Scope Change?');
-                console.log(templateBuilder.model);
+                console.log(template.model);
 
-                update.template(templateBuilder.model).success(function(data){
+                update.template(template.model).success(function(data){
 
                 })
             
@@ -60,8 +60,8 @@
 
             // Add Header
             addHeader = function() {
-                var index = _.size(templateBuilder.model.structure);
-                templateBuilder.model.structure[index] = {
+                var index = _.size(template.model.structure);
+                template.model.structure[index] = {
                     order: index,
                     template: "<template-objects-header></template-objects-header>",
                     title: "New Header"
@@ -70,8 +70,8 @@
 
             // Add Sub Header
             addSubHeader = function() {
-                var index = _.size(templateBuilder.model.structure);
-                templateBuilder.model.structure[index] = {
+                var index = _.size(template.model.structure);
+                template.model.structure[index] = {
                     order: index,
                     template: "<template-objects-subheader></template-objects-subheader>",
                     title: "This is a sub-header, it can also be used to output the result of a function (There will be COUNT(DATA 1) Sales this year)"
@@ -80,8 +80,8 @@
 
             // Add Bar Graph
             addBarGraph = function() {
-                var index = _.size(templateBuilder.model.structure);
-                templateBuilder.model.structure[index] = {
+                var index = _.size(template.model.structure);
+                template.model.structure[index] = {
                     order: index,
                     series: [],
                     template: "<template-objects-bar></template-objects-bar>",
@@ -93,8 +93,8 @@
 
             // Add Pie Graph
             addPieGraph = function() {
-                var index = _.size(templateBuilder.model.structure);
-                templateBuilder.model.structure[index] = {
+                var index = _.size(template.model.structure);
+                template.model.structure[index] = {
                     order: index,
                     series: [],
                     template: "<template-objects-pie></template-objects-pie>",
@@ -104,9 +104,9 @@
 
             // Delete from Template
 
-            templateBuilder.deleteFromTemplate = function(item) {
+            template.deleteFromTemplate = function(item) {
                 console.log('Delete From Template');
-                console.log(templateBuilder.model.structure)
+                console.log(template.model.structure)
             }
 
             // Main Area
@@ -135,7 +135,7 @@
                             // $scope.$apply(addPieGraph());
                     }
 
-                    templateBuilder.updateTemplate();
+                    template.updateTemplate();
 
                 }
             });
@@ -175,13 +175,13 @@
                         var originalOrder = $(o).data().order;
 
                         // Find this DOM object in the array and make it's new order the index
-                        templateBuilder.model.structure[originalOrder].order = i;
+                        template.model.structure[originalOrder].order = i;
                         
                     })
 
                     // Re-order the structure by it's new order so it is ordered correctly in the database
-                    templateBuilder.model.structure = toObject(_.orderBy(templateBuilder.model.structure, ['order'], ['asc']));
-                    templateBuilder.updateTemplate();
+                    template.model.structure = toObject(_.orderBy(template.model.structure, ['order'], ['asc']));
+                    template.updateTemplate();
                 }
             });
             

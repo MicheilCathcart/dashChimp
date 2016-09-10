@@ -4,12 +4,16 @@
 
     module.component('templateBarGraph', {
 		templateUrl: 'templateBarGraph.html',
-		controller: templateBarGraphController,
+		controller: templateBarGraphCtrl,
 		bindings: {
 			object: '>',
 			onDelete: '>',
 			onChange: '>'
 		}
 	});
+
+	function templateBarGraphCtrl() {
+		
+	}
   
 })();

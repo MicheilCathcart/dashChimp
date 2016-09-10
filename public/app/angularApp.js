@@ -18,12 +18,12 @@ app.config([
 	function($stateProvider, $urlRouterProvider) {
 		
 		$stateProvider
-            .state('templateBuilder', {
-				url:'/template-builder/',
-				template:'<template-builder></template-builder>',
+            .state('template', {
+				url:'/template/',
+				template:'<template></template>',
 			});
 			
-			$urlRouterProvider.otherwise('/template-builder/');
+			$urlRouterProvider.otherwise('/template/');
 
 	}
 ])

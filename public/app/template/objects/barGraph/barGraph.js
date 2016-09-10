@@ -6,14 +6,14 @@
 	    
 		return {
 			restrict: 'E',
-			templateUrl: 'app/templateBuilder/objects/barMenu/barMenu.html',
+			templateUrl: 'app/template/objects/barGraph/barGraph.html',
 			replace: true,
 			scope: false,
 			controller: controller,
 			link: link,
 			controllerAs:'templateObjectsBar',
 			bindToController: true,
-			require: ['^templateBuilder', 'templateObjectsBar']
+			require: ['^template', 'templateObjectsBar']
 		}
 		
 		function controller ($scope, $element) {
@@ -36,7 +36,7 @@
 			$scope.delete = function (model) {
 				$element.remove();
 				$scope.$destroy();
-				$ctrl.templateBuilder.deleteFromTemplate(model);
+				$ctrl.template.deleteFromTemplate(model);
 			}
 
 			// Make Data Box droppable
