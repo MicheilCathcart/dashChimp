@@ -2,7 +2,7 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('templateObjectsBar', ['$log', function($log) {
+    module.directive('templateObjectsBarOld', ['$log', function($log) {
 	    
 		return {
 			restrict: 'E',

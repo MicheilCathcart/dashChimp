@@ -57,13 +57,12 @@
             
             }
 
-
             // Add Header
             addHeader = function() {
                 var index = _.size(template.model.structure);
                 template.model.structure[index] = {
                     order: index,
-                    template: "<template-objects-header></template-objects-header>",
+                    type: "Header",
                     title: "New Header"
                 }
             }
@@ -73,7 +72,7 @@
                 var index = _.size(template.model.structure);
                 template.model.structure[index] = {
                     order: index,
-                    template: "<template-objects-subheader></template-objects-subheader>",
+                    type: "Sub Header",
                     title: "This is a sub-header, it can also be used to output the result of a function (There will be COUNT(DATA 1) Sales this year)"
                 }
             }
@@ -84,7 +83,7 @@
                 template.model.structure[index] = {
                     order: index,
                     series: [],
-                    template: "<template-objects-bar></template-objects-bar>",
+                    type: "Bar Graph",
                     title: "Bar Graph Heading - Click to Edit",
                     x: {},
                     y: {}
@@ -97,7 +96,7 @@
                 template.model.structure[index] = {
                     order: index,
                     series: [],
-                    template: "<template-objects-pie></template-objects-pie>",
+                    type: "Pie Graph",
                     title: "Pie Graph Heading - Click to Edit"
                 }
             }
