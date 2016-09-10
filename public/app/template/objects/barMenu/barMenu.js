@@ -8,19 +8,35 @@
 			restrict: 'E',
 			templateUrl: 'app/template/objects/barMenu/barMenu.html',
 			replace: true,
-			scope: {},
-			controller: controller
+			scope: false,
+			controller: controller,
+			link: link,
+			controllerAs:'barMenu',
+			bindToController: true,
+			require: ['^templateArea', 'templateObjectsBar']
 		}
 		
 		function controller ($scope, $element) {
+			
+			var templateObjectsBar = this;
 
-			$scope.model = $scope.$parent.object || {
-				title:'Bar Graph Heading'
-			};
+			console.log('$scope - controller');
+			console.log($scope);
 
-			$scope.delete = function () {
+		}
+
+		function link ($scope, $element, $attrs, $ctrl) {
+
+			console.log('$scope');
+			console.log($scope);
+
+			console.log('$ctrl');
+			console.log($ctrl);
+
+			$scope.delete = function (model) {
 				$element.remove();
-  				$scope.$destroy();
+				$scope.$destroy();
+				$ctrl.templateArea.deleteFromTemplate(model);
 			}
 
 			// Make Data Box droppable
@@ -41,9 +57,7 @@
       				// perform any model changes or method invocations here on angular app.
 
     			});
-				
 			})
-
 
 		}
 		

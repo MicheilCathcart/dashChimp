@@ -100,6 +100,13 @@
                 }
             }
 
+            // Delete from Template
+
+            templateArea.deleteFromTemplate = function(item) {
+                console.log('Delete From Template');
+                console.log(templateArea.model.structure)
+            }
+
             // Main Area
 
             $( ".template-area" ).droppable({
