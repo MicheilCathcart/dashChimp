@@ -87,8 +87,18 @@
 		<!-- Output Templates Alternate-->
 
 		<div ng-repeat="part in template.model.structure" class="area-object" data-order="{{ part.order }}">
-			<template-objects-header template-part="part" ng-if="part.type === 'Header'"></template-objects-header>
-			<template-objects-subheader template-part="part" ng-if="part.type === 'Sub Header'"></template-objects-subheader>
+			<template-objects-header 
+				template-part="part" 
+				on-delete="template.deleteFromTemplate(templatePart)"
+				on-change="template.changeTemplate(templatePart)"
+				ng-if="part.type === 'Header'">
+			</template-objects-header>
+			<template-objects-subheader 
+				template-part="part" 
+				on-delete="template.deleteFromTemplate(templatePart)"
+				on-change="template.changeTemplate(templatePart)"
+				ng-if="part.type === 'Sub Header'">
+			</template-objects-subheader>
 			<template-objects-bar 
 				template-part="part"
 				on-delete="template.deleteFromTemplate(templatePart)"

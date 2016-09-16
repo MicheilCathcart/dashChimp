@@ -10,19 +10,19 @@
             <div class="pull-right">
                 <div class="bar-menu-x">
                     X
-                    <div class="data-box">
+                    <div class="data-box" data-type="x">
                         <div ng-if="$ctrl.newTemplatePart.x" class="{{ $ctrl.newTemplatePart.x.color }} coloured databox-object"><div class="vertical-align">{{ $ctrl.newTemplatePart.x.name }}</div></div>
                     </div>
                 </div>
                 <div class="bar-menu-y">
                     Y
-                    <div class="data-box">
+                    <div class="data-box" data-type="y">
                         <div ng-if="$ctrl.newTemplatePart.y" class="{{ $ctrl.newTemplatePart.y.color }} coloured databox-object"><div class="vertical-align">{{ $ctrl.newTemplatePart.y.name }}</div></div>
                     </div>
                 </div>
                 <div class="bar-menu-series">
                     Series
-                    <div class="data-box">
+                    <div class="data-box" data-type="series">
                         <div ng-if="$ctrl.newTemplatePart.series.length > 0" ng-repeat="box in $ctrl.newTemplatePart.series" class="{{ box.color }} coloured databox-object"><div class="vertical-align">{{ box.name }}</div></div>
                     </div>
                 </div>

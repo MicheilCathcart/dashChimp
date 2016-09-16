@@ -36,7 +36,7 @@
                     template.model = data[0];
 
                     // Order Template Before Render
-                    template.model.structure = toObject(_.orderBy(template.model.structure, ['order'], ['asc'])); 
+                    template.model.structure = _.orderBy(template.model.structure, ['order'], ['asc']); 
 
                 })
             
@@ -48,8 +48,13 @@
             
             template.updateTemplate = function () {
 
+                console.log(template.model.structure);
 
-                update.template(template.model).success(function(data){
+                var postTemplate = angular.copy(template.model);
+
+                postTemplate.structure = toObject(postTemplate.structure); 
+
+                update.template(postTemplate).success(function(data){
 
                 })
             
@@ -103,8 +108,10 @@
 
             template.deleteFromTemplate = function(templatePart) {
 
+                console.log('Delete From Template');
+
                 // Delete templatePart from structure
-                delete template.model.structure[templatePart.order];
+                template.model.structure.splice(templatePart.order, 1)
                 
                 // Update the Database
                 template.updateTemplate();
@@ -114,11 +121,9 @@
 
             template.changeTemplate = function(templatePart) {
 
-                console.log('Updating template');
-                console.log(templatePart);
-                console.log(template.model.structure[templatePart.order]);
+                console.log('Updating Template');
 
-                // Delete templatePart from structure
+                // Update the template with the new Template Part
                 template.model.structure[templatePart.order] = templatePart;
                 
                 // Update the Database

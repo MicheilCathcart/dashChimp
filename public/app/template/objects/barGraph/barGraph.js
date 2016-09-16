@@ -2,66 +2,65 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('templateObjectsBarOld', ['$log', function($log) {
-	    
-		return {
-			restrict: 'E',
-			templateUrl: 'app/template/objects/barGraph/barGraph.html',
-			replace: true,
-			scope: false,
-			controller: controller,
-			link: link,
-			controllerAs:'templateObjectsBar',
-			bindToController: true,
-			require: ['^template', 'templateObjectsBar']
+    module.component('templateObjectsBar', {
+		templateUrl: 'app/template/objects/barGraph/barGraph.html',
+		controller: templateBarGraphCtrl,
+		bindings: {
+			templatePart: '<',
+			onDelete: '&',
+			onChange: '&'
 		}
-		
-		function controller ($scope, $element) {
-			
-			var templateObjectsBar = this;
+	});
 
-			console.log('$scope - controller');
-			console.log($scope);
+	function templateBarGraphCtrl() {
 
-		}
+		var ctrl = this;
 
-		function link ($scope, $element, $attrs, $ctrl) {
+		// Create a copy so the object is not updated within this component
+		ctrl.newTemplatePart = angular.copy(ctrl.templatePart);
 
-			console.log('$scope');
-			console.log($scope);
+		ctrl.delete = function() {
+			ctrl.onDelete({templatePart: ctrl.newTemplatePart});
+		};
 
-			console.log('$ctrl');
-			console.log($ctrl);
+		ctrl.change = function() {
+			console.log('Call Change');
+			ctrl.onChange({templatePart: ctrl.newTemplatePart});
+		};
 
-			$scope.delete = function (model) {
-				$element.remove();
-				$scope.$destroy();
-				$ctrl.template.deleteFromTemplate(model);
-			}
-
-			// Make Data Box droppable
-
-			$( ".data-box" ).droppable({
+		$( ".data-box" ).droppable({
 				accept: ".template-data-object",
 				drop: function( event, ui ) {
 					var target = $(event.target);
+					var type = target.data().type;
 					var className = ui.helper[0].dataset.class;
 					var fieldName = ui.helper[0].dataset.fieldName;
-					var template = '<div class="' + className + ' coloured databox-object"><div class="vertical-align">' + fieldName + '</div></div>';
-					target.append(template);
+
+					console.log(type);
+					if (type == "series") {
+						console.log(ctrl.newTemplatePart.series);
+						ctrl.newTemplatePart.series.push({ name: fieldName, color: className})
+					} else {
+						ctrl.newTemplatePart[type] = { name: fieldName, color: className};
+					}
+
+					ctrl.onChange({templatePart: ctrl.newTemplatePart});
+
+					console.log(ctrl.newTemplatePart);
 				}
 			});
 
-			$('.databox').on('click','.databox-object', function() {
-				$scope.$apply(function(){
-      				// perform any model changes or method invocations here on angular app.
+		$( ".databox-object" ).draggable({
+                helper: "clone",
+                zIndex: 100
+            });
 
-    			});
-			})
+		// This will probably be re-thought
 
-		}
+		$('.databox').on('click','.databox-object', function() {
+			console.log('Do Things');
+		})
 		
-    	
-    }]);
+	}
   
 })();
