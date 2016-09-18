@@ -2,39 +2,32 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('templateObjectsSubheader', ['$log', function($log) {
-	    
-		return {
-			restrict: 'E',
-			templateUrl: 'app/template/objects/subheader/subheader.html',
-			replace: true,
-			scope: {},
-			require: '^templateArea',
-			link: link
+    module.component('templateObjectsSubheader', {
+		templateUrl: 'app/template/objects/subheader/subheader.html',
+		controller: templateSubHeaderCtrl,
+		bindings: {
+			templatePart: '<',
+			index: '<',
+			onDelete: '&',
+			onChange: '&'
 		}
+	});
 
-		function link ($scope, $element, attrs, templateArea) {
+	function templateSubHeaderCtrl() {
 
-			// Import or define attributes
+		var ctrl = this;
 
-			$scope.model = $scope.$parent.object || {
-				title:'This is the subheader'
-			};
+		// Create a copy so the object is not updated within this component
+		ctrl.newTemplatePart = angular.copy(ctrl.templatePart);
 
-			// Text Area Automatic Resize
+		ctrl.delete = function() {
+			ctrl.onDelete({templatePart: ctrl.newTemplatePart, index: ctrl.index});
+		};
 
-			$scope.update = function() {
-				templateArea.updateTemplate();
-			}
-
-			$scope.delete = function () {
-				$element.remove();
-  				$scope.$destroy();
-			}
-
-		}
+		ctrl.change = function() {
+			ctrl.onChange({templatePart: ctrl.newTemplatePart});
+		};
 		
-    	
-    }]);
+	}
   
 })();

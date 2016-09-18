@@ -30,7 +30,96 @@
 
 <div class="dashboard animate" ng-class="{contracted: expanded}">
 
-    <template-area></template-area>
+    <div class="template-area" ng-class="{adjusted: showEdit}">
+
+		<!-- Template Menu Left -->
+
+		<div class="template-menu-left">
+			<div class="template-object" data-template="header">
+				<img src="/images/header.svg">
+			</div>
+			<div class="template-object" data-template="subheader">
+				<img src="/images/subheader.svg">
+			</div>
+			<div class="template-object" data-template="bargraph">
+				<img src="/images/bar.svg">
+			</div>
+			<div class="template-object" data-template="piegraph">
+				<img src="/images/pie.svg">
+			</div>
+		</div>
+
+		<!-- Template Menu Right -->
+
+		<div class="template-menu-right coloured">
+			<div class="template-data-object A coloured" data-field-name="DATA 1" data-class="A">
+				<div class="vertical-align">DATA 1</div>
+			</div>
+			<div class="template-data-object B coloured" data-field-name="DATA 2" data-class="B">
+				<div class="vertical-align">DATA 2</div>
+			</div>
+			<div class="template-data-object C coloured" data-field-name="DATA 3" data-class="C">
+				<div class="vertical-align">DATA 3</div>
+			</div>
+			<div class="template-data-object D coloured" data-field-name="DATA 4" data-class="D">
+				<div class="vertical-align">DATA 4</div>
+			</div>
+			<div class="template-data-object E coloured" data-field-name="DATA 5" data-class="E">
+				<div class="vertical-align">DATA 5</div>
+			</div>
+			<div class="template-data-object F coloured" data-field-name="DATA 6" data-class="F">
+				<div class="vertical-align">DATA 6</div>
+			</div>
+			<div class="template-data-object G coloured" data-field-name="DATA 7" data-class="G">
+				<div class="vertical-align">DATA 7</div>
+			</div>
+			<div class="template-data-object primary button" ng-click="showEdit =! showEdit">
+				<div class="vertical-align">
+					<img src="/images/fa-pencil.svg">
+				</div>
+			</div>
+		</div>
+
+		<!-- Output Templates -->
+
+		<!--<div ng-repeat="object in template.model.structure" template-part="'object'" class="area-object" data-order="{{ object.order }} " compile="object.template"></div>-->
+
+		<!-- Output Templates Alternate-->
+
+		<div class="sortable-objects">
+
+			<div ng-repeat="part in template.model.structure" class="area-object" data-order="{{ part.order }}">
+				<template-objects-header 
+					template-part="part" 
+					index="$index"
+					on-delete="template.deleteFromTemplate(templatePart, index)"
+					on-change="template.changeTemplate(templatePart)"
+					ng-if="part.type === 'Header'">
+				</template-objects-header>
+				<template-objects-subheader 
+					template-part="part"
+					index="$index" 
+					on-delete="template.deleteFromTemplate(templatePart, index)"
+					on-change="template.changeTemplate(templatePart)"
+					ng-if="part.type === 'Sub Header'">
+				</template-objects-subheader>
+				<template-objects-bar 
+					template-part="part"
+					index="$index"
+					on-delete="template.deleteFromTemplate(templatePart, index)"
+					on-change="template.changeTemplate(templatePart)"
+					ng-if="part.type === 'Bar Graph'">
+				</template-objects-bar>
+			</div>
+
+		</div>
+
+		<!-- Edit Fields -->
+
+		<div class="edit-fields">
+		</div>
+        
+</div>
 
 </div>
 

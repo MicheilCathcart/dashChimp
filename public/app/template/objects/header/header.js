@@ -2,39 +2,35 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('templateObjectsHeader', ['$log', function($log) {
-	    
-		return {
-			restrict: 'E',
-			templateUrl: 'app/template/objects/header/header.html',
-			replace: true,
-			scope: {},
-			require: '^templateArea',
-			link: link
+    module.component('templateObjectsHeader', {
+		templateUrl: 'app/template/objects/header/header.html',
+		controller: templateHeaderCtrl,
+		bindings: {
+			templatePart: '<',
+			index: '<',
+			onDelete: '&',
+			onChange: '&'
 		}
+	});
 
-		function link ($scope, $element, attrs, templateArea) {
+	function templateHeaderCtrl() {
 
-			// Import or define attributes
+		var ctrl = this;
 
-			$scope.model = $scope.$parent.object || {
-				title:'Header'
-			};
+		console.log('Header Called');
+		console.log(ctrl.templatePart);
 
-			// Text Area Automatic Resize
+		// Create a copy so the object is not updated within this component
+		ctrl.newTemplatePart = angular.copy(ctrl.templatePart);
 
-			$scope.update = function() {
-				templateArea.updateTemplate();
-			}
+		ctrl.delete = function() {
+			ctrl.onDelete({templatePart: ctrl.newTemplatePart, index: ctrl.index});
+		};
 
-			$scope.delete = function () {
-				$element.remove();
-  				$scope.$destroy();
-			}
-
-		}
+		ctrl.change = function() {
+			ctrl.onChange({templatePart: ctrl.newTemplatePart});
+		};
 		
-    	
-    }]);
+	}
   
 })();

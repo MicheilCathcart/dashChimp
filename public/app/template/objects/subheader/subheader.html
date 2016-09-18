@@ -1,5 +1,5 @@
 <div class="template-objects subheader">
-    <textarea elastic class="editable" ng-blur="update()" ng-model="model.title"></textarea>
-    <div class="delete" ng-click="delete()"><i class="fa fa-times" aria-hidden="true"></i></div>
+    <textarea elastic class="editable" ng-blur="$ctrl.change()" ng-model="$ctrl.newTemplatePart.title"></textarea>
+    <div class="delete" ng-click="$ctrl.delete()"><i class="fa fa-times" aria-hidden="true"></i></div>
     <div class="drag"><i class="fa fa-bars" aria-hidden="true"></i></div>
 </div>
