@@ -7,6 +7,7 @@
 		controller: templateBarGraphCtrl,
 		bindings: {
 			templatePart: '<',
+			index: '<',
 			onDelete: '&',
 			onChange: '&'
 		}
@@ -16,50 +17,35 @@
 
 		var ctrl = this;
 
+		console.log('ctrl.templatePart');
+		console.log(ctrl.templatePart);
+
 		// Create a copy so the object is not updated within this component
 		ctrl.newTemplatePart = angular.copy(ctrl.templatePart);
 
+		console.log('ctrl.newTemplatePart');
+		console.log(ctrl.newTemplatePart);
+
 		ctrl.delete = function() {
-			ctrl.onDelete({templatePart: ctrl.newTemplatePart});
+			ctrl.onDelete({templatePart: ctrl.newTemplatePart, index: ctrl.index});
 		};
 
 		ctrl.change = function() {
-			console.log('Call Change');
 			ctrl.onChange({templatePart: ctrl.newTemplatePart});
 		};
 
-		$( ".data-box" ).droppable({
-				accept: ".template-data-object",
-				drop: function( event, ui ) {
-					var target = $(event.target);
-					var type = target.data().type;
-					var className = ui.helper[0].dataset.class;
-					var fieldName = ui.helper[0].dataset.fieldName;
+		// Update the template with the returned databox
 
-					console.log(type);
-					if (type == "series") {
-						console.log(ctrl.newTemplatePart.series);
-						ctrl.newTemplatePart.series.push({ name: fieldName, color: className})
-					} else {
-						ctrl.newTemplatePart[type] = { name: fieldName, color: className};
-					}
+		ctrl.changeDatabox = function(databox) {
 
-					ctrl.onChange({templatePart: ctrl.newTemplatePart});
+			if (databox.type == "series") {
+				ctrl.newTemplatePart.series.push({ name: databox.fieldName, color: databox.className})
+			} else {
+				ctrl.newTemplatePart[databox.type] = { name: databox.fieldName, color: databox.className};
+			}
 
-					console.log(ctrl.newTemplatePart);
-				}
-			});
-
-		$( ".databox-object" ).draggable({
-                helper: "clone",
-                zIndex: 100
-            });
-
-		// This will probably be re-thought
-
-		$('.databox').on('click','.databox-object', function() {
-			console.log('Do Things');
-		})
+			ctrl.onChange({templatePart: ctrl.newTemplatePart});
+		};
 		
 	}
   

@@ -86,25 +86,32 @@
 
 		<!-- Output Templates Alternate-->
 
-		<div ng-repeat="part in template.model.structure" class="area-object" data-order="{{ part.order }}">
-			<template-objects-header 
-				template-part="part" 
-				on-delete="template.deleteFromTemplate(templatePart)"
-				on-change="template.changeTemplate(templatePart)"
-				ng-if="part.type === 'Header'">
-			</template-objects-header>
-			<template-objects-subheader 
-				template-part="part" 
-				on-delete="template.deleteFromTemplate(templatePart)"
-				on-change="template.changeTemplate(templatePart)"
-				ng-if="part.type === 'Sub Header'">
-			</template-objects-subheader>
-			<template-objects-bar 
-				template-part="part"
-				on-delete="template.deleteFromTemplate(templatePart)"
-				on-change="template.changeTemplate(templatePart)"
-				ng-if="part.type === 'Bar Graph'">
-			</template-objects-bar>
+		<div class="sortable-objects">
+
+			<div ng-repeat="part in template.model.structure" class="area-object" data-order="{{ part.order }}">
+				<template-objects-header 
+					template-part="part" 
+					index="$index"
+					on-delete="template.deleteFromTemplate(templatePart, index)"
+					on-change="template.changeTemplate(templatePart)"
+					ng-if="part.type === 'Header'">
+				</template-objects-header>
+				<template-objects-subheader 
+					template-part="part"
+					index="$index" 
+					on-delete="template.deleteFromTemplate(templatePart, index)"
+					on-change="template.changeTemplate(templatePart)"
+					ng-if="part.type === 'Sub Header'">
+				</template-objects-subheader>
+				<template-objects-bar 
+					template-part="part"
+					index="$index"
+					on-delete="template.deleteFromTemplate(templatePart, index)"
+					on-change="template.changeTemplate(templatePart)"
+					ng-if="part.type === 'Bar Graph'">
+				</template-objects-bar>
+			</div>
+
 		</div>
 
 		<!-- Edit Fields -->

@@ -7,6 +7,7 @@
 		controller: templateSubHeaderCtrl,
 		bindings: {
 			templatePart: '<',
+			index: '<',
 			onDelete: '&',
 			onChange: '&'
 		}
@@ -20,7 +21,7 @@
 		ctrl.newTemplatePart = angular.copy(ctrl.templatePart);
 
 		ctrl.delete = function() {
-			ctrl.onDelete({templatePart: ctrl.newTemplatePart});
+			ctrl.onDelete({templatePart: ctrl.newTemplatePart, index: ctrl.index});
 		};
 
 		ctrl.change = function() {

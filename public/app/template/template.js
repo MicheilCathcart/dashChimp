@@ -48,14 +48,16 @@
             
             template.updateTemplate = function () {
 
-                console.log(template.model.structure);
+                console.log('Update Template');
 
                 var postTemplate = angular.copy(template.model);
 
                 postTemplate.structure = toObject(postTemplate.structure); 
 
                 update.template(postTemplate).success(function(data){
-
+                    console.log('Post Update Data');
+                    console.log(data);
+                    template.readTemplate()
                 })
             
             }
@@ -104,14 +106,24 @@
                 }
             }
 
+            $scope.$watch('template.model.structure', function () {
+                console.log('Do ng-Repeat');
+            });
+
             // Delete from Template
 
-            template.deleteFromTemplate = function(templatePart) {
+            template.deleteFromTemplate = function(templatePart, index) {
 
                 console.log('Delete From Template');
 
                 // Delete templatePart from structure
-                template.model.structure.splice(templatePart.order, 1)
+                template.model.structure.splice(index, 1)
+
+                // Update Template Part Orders
+
+                _.each(template.model.structure, function (o, i) {
+                    o.order = i;
+                })
                 
                 // Update the Database
                 template.updateTemplate();
@@ -120,8 +132,6 @@
             // Change Template
 
             template.changeTemplate = function(templatePart) {
-
-                console.log('Updating Template');
 
                 // Update the template with the new Template Part
                 template.model.structure[templatePart.order] = templatePart;
@@ -177,7 +187,15 @@
 
             // Main Area
 
-            $( ".template-area" ).sortable({
+            var moveArray = function (array, originalPosition, newPosition) {
+                array.splice(newPosition, 0, array.splice(originalPosition, 1)[0]);
+                console.log('array');
+                console.log(array);
+            };
+
+            var originalPosition, newPosition;
+
+            $( ".sortable-objects" ).sortable({
                 handle: ".drag",
                 helper: "clone",
                 forceHelperSize: true,
@@ -186,23 +204,26 @@
                 revert: true,
                 axis: "y",
                 tolerance: "pointer",
-                update: function( event, ui ) { 
-                    // Update the Model Order
-                    _.each($('.area-object'), function (o, i) {
+                start: function(event, ui) {
+                    // Get the original position
+                    originalPosition = ui.item.index();
+                },
+                stop: function(event, ui) {
 
-                        // Loops though object in current DOM order
+                    // Get the new position
+                    newPosition = ui.item.index();
 
-                        // Find objects original order
-                        var originalOrder = $(o).data().order;
+                    // Update the index order of the array
+                    moveArray(template.model.structure, originalPosition, newPosition);
 
-                        // Find this DOM object in the array and make it's new order the index
-                        template.model.structure[originalOrder].order = i;
-                        
+                    // Update the order property of objects in the array
+                    _.each(template.model.structure, function(o, i){
+                        o.order = i;
                     })
 
-                    // Re-order the structure by it's new order so it is ordered correctly in the database
-                    template.model.structure = toObject(_.orderBy(template.model.structure, ['order'], ['asc']));
+                    // Update the Database
                     template.updateTemplate();
+
                 }
             });
             

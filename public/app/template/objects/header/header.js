@@ -7,6 +7,7 @@
 		controller: templateHeaderCtrl,
 		bindings: {
 			templatePart: '<',
+			index: '<',
 			onDelete: '&',
 			onChange: '&'
 		}
@@ -16,11 +17,14 @@
 
 		var ctrl = this;
 
+		console.log('Header Called');
+		console.log(ctrl.templatePart);
+
 		// Create a copy so the object is not updated within this component
 		ctrl.newTemplatePart = angular.copy(ctrl.templatePart);
 
 		ctrl.delete = function() {
-			ctrl.onDelete({templatePart: ctrl.newTemplatePart});
+			ctrl.onDelete({templatePart: ctrl.newTemplatePart, index: ctrl.index});
 		};
 
 		ctrl.change = function() {
