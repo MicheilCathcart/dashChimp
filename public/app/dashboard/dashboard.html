@@ -1,0 +1,43 @@
+<div class="dashboard-builder">
+
+<!-- Dashboard Header -->
+
+<div class="dashboard-header">
+    
+		<div class="header-title pull-left">
+			<div class="title vertical-align">
+				<input type="text" ng-model="dashboard.title"/>
+				<div class="edit pull-right">
+					<i class="fa fa-pencil fa-right fa-size-small"></i>
+				</div>
+			</div>
+		</div>
+        
+        <div class="header-button pull-right no-border">
+			<div class="vertical-align">
+			     SHARE
+			</div>
+		</div>
+        
+        <div class="header-button cog pull-left">
+			<div class="vertical-align">
+			<i class="fa fa-cog fa-size-small"></i>
+			</div>
+		</div>
+</div>
+
+<!-- Dashboard Main Area -->
+
+<div class="dashboard animate" ng-class="{contracted: expanded}">
+
+    <div class="dashboard-area" ng-class="{adjusted: showEdit}">
+
+</div>
+
+<div class="bottom-right-menu">
+    <img ui-sref="template" src="../images/dashboard-edit.svg">
+</div>
+
+</div>
+
+</div>

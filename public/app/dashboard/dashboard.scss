@@ -1,0 +1,96 @@
+// Imports 
+
+@import '../scss/variables';
+@import '../scss/mixins';
+@import '../scss/animations';
+
+// This is shared and should be merged/moved
+
+.dashboard-header {
+	height: 42px;
+	border-bottom: 1px solid $lineColour; 
+	
+	.header-button {
+		width: 76px;
+		height: 42px;
+		display: inline-block;
+		text-align: center;
+		border-right: 1px solid $lineColour;
+		text-transform: uppercase;
+		&.cog {
+			border-left: 1px solid $lineColour;
+		}
+        &.no-border {
+			border-right: 0px;
+		}
+		&.date-range {
+			width: 152px;
+			font-size: 9px;
+		}
+		&:hover {
+			background-color: $lightHover;
+			cursor: pointer;
+			border-bottom: 1px solid $lineColour; 
+		}
+	}
+	
+	.header-title {
+		height: 42px;
+		overflow:hidden;
+		width:430px;
+		text-align: left;
+		display: inline-block;
+		text-transform: uppercase;
+		&:hover {
+			background-color: $lightHover;
+			cursor: text;
+			border-bottom: 1px solid $lineColour; 
+			.title .edit {
+				color: $fontColour;
+			}
+		}
+		.title .edit {
+			position: absolute;
+    		right: 25px;
+    		top: 12px;
+			color: $chimpBackground;
+		}
+		.title input {
+			padding: 0px 25px;
+			height: 41px;
+			width: 100%;
+			text-transform: uppercase;
+			&:focus {
+				background-color: $lightHover;
+				& + .edit {
+				color: $chimpPrimary;
+				}
+			}
+			&:hover {
+				background-color: $lightHover;
+			}
+		}
+	}
+	
+} 
+
+.dashboard-area {
+    background-color: white;
+    padding: 74px;
+    position: relative;
+    width: 80%;
+    max-width: 765px;
+    margin: 68px auto;
+    height: auto;
+    min-height: 80vh;
+    transition: transform 0.5s linear;
+}
+
+.bottom-right-menu {
+    position:fixed;
+    bottom: 85px;
+    right: 7%;
+    img {
+        cursor: pointer;
+    }
+}
