@@ -3,7 +3,7 @@ var app = angular.module("app", [
 	'app.charts',
 	'app.dashboard',
 	'ui.router',
-    'ngSanitize',
+  'ngSanitize',
 	'ngAnimate'
 ]);
 
@@ -19,13 +19,15 @@ app.config([
 	function($stateProvider, $urlRouterProvider) {
 		
 		$stateProvider
-            .state('template', {
+        .state('template', {
 				url:'/template/',
 				template:'<template></template>',
+				params: { movementType: null }
 			})
 			.state('dashboard', {
 				url:'/dashboard/',
 				template:'<dashboard></dashboard>',
+				params: { movementType: null }
 			});
 			
 			$urlRouterProvider.otherwise('/dashboard/');
@@ -39,9 +41,13 @@ app.config([
 
 // Rootscope Ctrl 
 
+/*
 app.controller('rootscopeCtrl', ['$rootScope','$element', function($rootScope, $element) {
       $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
 		  console.log('State Changed');
+
+			console.log(toState);
+			console.log(fromState);
 
       var animated = $element.find('ui-view');
       animated.removeClass('scrolled');
@@ -55,6 +61,8 @@ app.controller('rootscopeCtrl', ['$rootScope','$element', function($rootScope, $
       animated.addClass('scrolled');
     });
 }]);
+
+*/
 
 /* Remove the # from URL's' */
 

@@ -131,23 +131,26 @@ input {
 .button {
   cursor: pointer !important; }
 
-.scrolled {
-  transition: transform 0.5s ease;
+.page {
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease;
   transform: translate3d(0, 0, 0); }
-  .scrolled.ng-enter {
+  .page.forward.ng-enter {
     transform: translate3d(100%, 0, 0); }
-  .scrolled.ng-enter-active {
+  .page.forward.ng-enter-active {
     transform: translate3d(0, 0, 0); }
-  .scrolled.ng-leave {
+  .page.forward.ng-leave {
     transform: translate3d(0, 0, 0); }
-  .scrolled.ng-leave-active {
+  .page.forward.ng-leave-active {
     transform: translate3d(-100%, 0, 0); }
-
-.backward .scrolled.ng-enter {
-  transform: translate3d(-100%, 0, 0); }
-.backward .scrolled.ng-enter-active {
-  transform: translate3d(0, 0, 0); }
-.backward .scrolled.ng-leave {
-  transform: translate3d(0, 0, 0); }
-.backward .scrolled.ng-leave-active {
-  transform: translate3d(100%, 0, 0); }
+  .page.backward.ng-enter {
+    transform: translate3d(-100%, 0, 0); }
+  .page.backward.ng-enter-active {
+    transform: translate3d(0, 0, 0); }
+  .page.backward.ng-leave {
+    transform: translate3d(0, 0, 0); }
+  .page.backward.ng-leave-active {
+    transform: translate3d(100%, 0, 0); }

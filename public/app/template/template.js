@@ -2,20 +2,20 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('template', ['$log','$compile','$timeout','read','update', function($log, $compile, $timeout, read, update) {
+    module.directive('template', ['$log','$compile','$timeout','read','update','$stateParams', function($log, $compile, $timeout, read, update, $stateParams) {
 	    
 		return {
 			restrict: 'E',
 			templateUrl: 'app/template/template.html',
             replace:true,
-            controllerAs: 'template',
+            controllerAs: '$ctrl',
             bindToController: true,
 			controller: controller
 		}
 		
 		function controller ($scope, $element) {
 
-            var template = this;
+            var $ctrl = this;
 
             // Array to object
             function toObject(arr) {
@@ -25,47 +25,49 @@
                 return rv;
             }
 
-            template.title = 'New Template Structure';
+            $ctrl.pageClass = $stateParams.movementType;
+
+            $ctrl.title = 'New Template Structure';
 
             // Read the Template
             
-            template.readTemplate = function () {
+            $ctrl.readTemplate = function () {
 
                 read.template().success(function(data){
 
-                    template.model = data[0];
+                    $ctrl.model = data[0];
 
                     // Order Template Before Render
-                    template.model.structure = _.orderBy(template.model.structure, ['order'], ['asc']); 
+                    $ctrl.model.structure = _.orderBy($ctrl.model.structure, ['order'], ['asc']); 
 
                 })
             
             }
 
-            template.readTemplate();
+            $ctrl.readTemplate();
 
             // Update the Template
             
-            template.updateTemplate = function () {
+            $ctrl.updateTemplate = function () {
 
                 console.log('Update Template');
 
-                var postTemplate = angular.copy(template.model);
+                var postTemplate = angular.copy($ctrl.model);
 
                 postTemplate.structure = toObject(postTemplate.structure); 
 
                 update.template(postTemplate).success(function(data){
                     console.log('Post Update Data');
                     console.log(data);
-                    template.readTemplate()
+                    $ctrl.readTemplate()
                 })
             
             }
 
             // Add Header
             addHeader = function() {
-                var index = _.size(template.model.structure);
-                template.model.structure[index] = {
+                var index = _.size($ctrl.model.structure);
+                $ctrl.model.structure[index] = {
                     order: index,
                     type: "Header",
                     title: "New Header"
@@ -74,8 +76,8 @@
 
             // Add Sub Header
             addSubHeader = function() {
-                var index = _.size(template.model.structure);
-                template.model.structure[index] = {
+                var index = _.size($ctrl.model.structure);
+                $ctrl.model.structure[index] = {
                     order: index,
                     type: "Sub Header",
                     title: "This is a sub-header, it can also be used to output the result of a function (There will be COUNT(DATA 1) Sales this year)"
@@ -84,8 +86,8 @@
 
             // Add Bar Graph
             addBarGraph = function() {
-                var index = _.size(template.model.structure);
-                template.model.structure[index] = {
+                var index = _.size($ctrl.model.structure);
+                $ctrl.model.structure[index] = {
                     order: index,
                     series: [],
                     type: "Bar Graph",
@@ -97,8 +99,8 @@
 
             // Add Pie Graph
             addPieGraph = function() {
-                var index = _.size(template.model.structure);
-                template.model.structure[index] = {
+                var index = _.size($ctrl.model.structure);
+                $ctrl.model.structure[index] = {
                     order: index,
                     series: [],
                     type: "Pie Graph",
@@ -112,32 +114,32 @@
 
             // Delete from Template
 
-            template.deleteFromTemplate = function(templatePart, index) {
+            $ctrl.deleteFromTemplate = function(templatePart, index) {
 
                 console.log('Delete From Template');
 
                 // Delete templatePart from structure
-                template.model.structure.splice(index, 1)
+                $ctrl.model.structure.splice(index, 1)
 
                 // Update Template Part Orders
 
-                _.each(template.model.structure, function (o, i) {
+                _.each($ctrl.model.structure, function (o, i) {
                     o.order = i;
                 })
                 
                 // Update the Database
-                template.updateTemplate();
+                $ctrl.updateTemplate();
             }
 
             // Change Template
 
-            template.changeTemplate = function(templatePart) {
+            $ctrl.changeTemplate = function(templatePart) {
 
                 // Update the template with the new Template Part
-                template.model.structure[templatePart.order] = templatePart;
+                $ctrl.model.structure[templatePart.order] = templatePart;
                 
                 // Update the Database
-                template.updateTemplate();
+                $ctrl.updateTemplate();
             }
 
             // Main Area
@@ -166,7 +168,7 @@
                             // $scope.$apply(addPieGraph());
                     }
 
-                    template.updateTemplate();
+                    $ctrl.updateTemplate();
 
                 }
             });
@@ -214,15 +216,15 @@
                     newPosition = ui.item.index();
 
                     // Update the index order of the array
-                    moveArray(template.model.structure, originalPosition, newPosition);
+                    moveArray($ctrl.model.structure, originalPosition, newPosition);
 
                     // Update the order property of objects in the array
-                    _.each(template.model.structure, function(o, i){
+                    _.each($ctrl.model.structure, function(o, i){
                         o.order = i;
                     })
 
                     // Update the Database
-                    template.updateTemplate();
+                    $ctrl.updateTemplate();
 
                 }
             });

@@ -2,23 +2,26 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('dashboard', ['$log','$compile','$timeout','read','update', function($log, $compile, $timeout, read, update) {
+    module.directive('dashboard', ['$log','$compile','$timeout','read','update','$stateParams', function($log, $compile, $timeout, read, update, $stateParams) {
 	    
 		return {
 			restrict: 'E',
 			templateUrl: 'app/dashboard/dashboard.html',
             replace:true,
-            controllerAs: 'dashboard',
+            controllerAs: '$ctrl',
             bindToController: true,
 			controller: controller
 		}
 		
 		function controller ($scope, $element) {
 
-            var dashboard = this;
+            var $ctrl = this;
+
+            console.log($stateParams);
+
+            $ctrl.pageClass = $stateParams.movementType;
 
 		}
-		
     	
     }]);
   

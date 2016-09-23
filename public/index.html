@@ -28,7 +28,7 @@
     
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.0/angular-sanitize.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
     
@@ -87,8 +87,8 @@
 </header>
 
 <!-- UI View renders out the view -->
-<div ng-controller="rootscopeCtrl">
-<ui-view></ui-view>
+<div>
+    <ui-view class="page {{$ctrl.pageClass}}" ></ui-view>
 </div>
 
 </body>

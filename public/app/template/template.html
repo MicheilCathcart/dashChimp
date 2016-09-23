@@ -6,7 +6,7 @@
     
 		<div class="header-title pull-left">
 			<div class="title vertical-align">
-				<input type="text" ng-model="template.title"/>
+				<input type="text" ng-model="$ctrl.title"/>
 				<div class="edit pull-right">
 					<i class="fa fa-pencil fa-right fa-size-small"></i>
 				</div>
@@ -88,26 +88,26 @@
 
 		<div class="sortable-objects">
 
-			<div ng-repeat="part in template.model.structure" class="area-object" data-order="{{ part.order }}">
+			<div ng-repeat="part in $ctrl.model.structure" class="area-object" data-order="{{ part.order }}">
 				<template-objects-header 
 					template-part="part" 
 					index="$index"
-					on-delete="template.deleteFromTemplate(templatePart, index)"
-					on-change="template.changeTemplate(templatePart)"
+					on-delete="$ctrl.deleteFromTemplate(templatePart, index)"
+					on-change="$ctrl.changeTemplate(templatePart)"
 					ng-if="part.type === 'Header'">
 				</template-objects-header>
 				<template-objects-subheader 
 					template-part="part"
 					index="$index" 
-					on-delete="template.deleteFromTemplate(templatePart, index)"
-					on-change="template.changeTemplate(templatePart)"
+					on-delete="$ctrl.deleteFromTemplate(templatePart, index)"
+					on-change="$ctrl.changeTemplate(templatePart)"
 					ng-if="part.type === 'Sub Header'">
 				</template-objects-subheader>
 				<template-objects-bar 
 					template-part="part"
 					index="$index"
-					on-delete="template.deleteFromTemplate(templatePart, index)"
-					on-change="template.changeTemplate(templatePart)"
+					on-delete="$ctrl.deleteFromTemplate(templatePart, index)"
+					on-change="$ctrl.changeTemplate(templatePart)"
 					ng-if="part.type === 'Bar Graph'">
 				</template-objects-bar>
 			</div>
@@ -122,7 +122,7 @@
 </div>
 
 <div class="bottom-left-menu">
-    <img ui-sref="dashboard" src="../images/view-icon.svg">
+    <img ng-click="$ctrl.pageClass='backward'" ui-sref="dashboard({movementType:'backward'})" src="../images/view-icon.svg">
 </div>
 
 
