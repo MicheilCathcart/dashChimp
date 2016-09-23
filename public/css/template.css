@@ -63,7 +63,7 @@
   margin: 68px auto;
   height: auto;
   min-height: 80vh;
-  transition: transform 0.5s linear; }
+  transition: transform 1s ease; }
   .template-area.adjusted {
     transform: translateX(-900px); }
     .template-area.adjusted .edit-fields {
@@ -98,7 +98,7 @@
       margin-bottom: 0px; }
 
 .edit-fields {
-  transition: transform 0.5s linear;
+  transition: transform 1s ease;
   transform: translateY(-1000px);
   position: absolute;
   right: -782px;
