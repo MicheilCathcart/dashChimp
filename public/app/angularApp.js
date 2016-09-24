@@ -28,9 +28,14 @@ app.config([
 				url:'/dashboard/',
 				template:'<dashboard></dashboard>',
 				params: { movementType: null }
+			})
+			.state('import', {
+				url:'/import/',
+				template:'<import></import>',
+				params: { movementType: null }
 			});
 			
-			$urlRouterProvider.otherwise('/dashboard/');
+			$urlRouterProvider.otherwise('/import/');
 
 	}
 ])

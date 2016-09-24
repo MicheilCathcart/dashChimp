@@ -178,10 +178,3 @@
 
 .sortable-placeholder {
   background-color: #F9F9F9; }
-
-.bottom-left-menu {
-  position: fixed;
-  bottom: 85px;
-  left: 7%; }
-  .bottom-left-menu img {
-    cursor: pointer; }
