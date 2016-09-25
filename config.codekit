@@ -162,12 +162,12 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
-	"\/public\/app\/directives\/fileread.js": {
+	"\/public\/app\/directives\/fileRead.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/public\/app\/directives\/fileread.js",
-		"outputAbbreviatedPath": "\/public\/app\/directives\/min\/fileread-min.js",
+		"inputAbbreviatedPath": "\/public\/app\/directives\/fileRead.js",
+		"outputAbbreviatedPath": "\/public\/app\/directives\/min\/fileRead-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,

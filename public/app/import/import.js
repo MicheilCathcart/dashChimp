@@ -19,6 +19,16 @@
 
             $ctrl.pageClass = $stateParams.movementType;
 
+            $ctrl.spreadsheet = {};
+
+            $ctrl.upload = function(data) {
+                $scope.$apply(function () {
+                    $ctrl.spreadsheet = data;
+                })
+                console.log('$ctrl.spreadsheet');
+                console.log($ctrl.spreadsheet);
+            }
+
 		}
     	
     }]);

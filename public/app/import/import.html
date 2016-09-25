@@ -5,7 +5,21 @@
     <div class="page-area" ng-class="{adjusted: showEdit}">
 
         Upload Excel Document
-        <input type="file" accept=".xls,.xlsx,.ods,.csv" fileread multiple="false" />
+        <input style="margin-bottom:60px;" type="file" accept=".xls,.xlsx,.ods,.csv" file-read on-upload="$ctrl.upload(data)" multiple="false" />
+        
+        <div style="margin-bottom:60px;">
+        Select Primary Date Field:
+        <button ng-repeat="date in $ctrl.spreadsheet.dates">{{ date }}</button>
+        </div>
+
+        <table style="margin-bottom:60px;">
+            <tr>
+                <th ng-repeat="header in $ctrl.spreadsheet.headers">{{ Header }}</th>
+            </tr>
+            <tr ng-repeat="row in $ctrl.spreadsheet.data track by $index">
+                <th ng-repeat="cell in row track by $index">{{ cell }}</th>
+            </tr>
+        </table>
 
         <div class="bottom-right-menu">
             <img ng-click="$ctrl.pageClass='forward'" ui-sref="dashboard({movementType: 'forward'})" src="../images/view-icon.svg">

@@ -2,13 +2,14 @@
 
     var module = angular.module('app.dashboard');
 
-    module.directive('fileread', function() {
+    module.directive('fileRead', function() {
 	    
 		return {
 			restrict: 'A',
             scope: {},
             controllerAs: 'ctrl',
             bindToController: {
+                onUpload: '&'
             },
             controller: controller,
             link: link
@@ -18,17 +19,30 @@
 
             var ctrl = this;
 
+            ctrl.upload = function(spreadsheet) {
+                ctrl.onUpload({data: spreadsheet});
+            };
+
         }
 
         function link (scope, element, attr, ctrl) {
 
             function isValidDate(date) {
-                var dateFormats = ['DD/MM/YYYY h:mma','DD/MM/YY'];
-                var valid = moment(date, dateFormats, true).isValid();
-                return valid;
+
+                var dateFormats = [
+                    'DD/MM/YYYY h:mma',
+                    'DD/MM/YY'
+                    ];
+
+                var valid = _.each(function(format) {
+                    var check = moment(date, format, true).isValid();
+                    if (check) return true;
+                })
+
+                return valid ? true : false;
+
             }
             
-
             element.on('change', function (changeEvent) {
 
                     var reader = new FileReader();
@@ -54,12 +68,13 @@
                                 if (isDate) dates.push(headerNames[i]);
                             });
 
-                            console.log('dates');
-                            console.log(dates);
-                            console.log('data');
-                            console.log(jsonData);
-                            console.log('headers');
-                            console.log(headerNames);
+                            var spreadsheet = {
+                                dates: dates,
+                                headers: headerNames,
+                                data: jsonData
+                            }
+
+                            ctrl.upload(spreadsheet);
                             
                             element.val(null);
 
