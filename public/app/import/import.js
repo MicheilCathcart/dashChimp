@@ -24,9 +24,8 @@
             $ctrl.upload = function(data) {
                 $scope.$apply(function () {
                     $ctrl.spreadsheet = data;
+                    console.log(data);
                 })
-                console.log('$ctrl.spreadsheet');
-                console.log($ctrl.spreadsheet);
             }
 
 		}
