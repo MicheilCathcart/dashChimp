@@ -14,7 +14,7 @@
 
         <table style="margin-bottom:60px;">
             <tr>
-                <th ng-repeat="header in $ctrl.spreadsheet.headers">{{ Header }}</th>
+                <th ng-repeat="header in $ctrl.spreadsheet.headers">{{ header.name }}</th>
             </tr>
             <tr ng-repeat="row in $ctrl.spreadsheet.data track by $index">
                 <th ng-repeat="cell in row track by $index">{{ cell }}</th>

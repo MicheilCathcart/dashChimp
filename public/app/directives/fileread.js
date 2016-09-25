@@ -1,3 +1,8 @@
+// I have added the below update to xlsx.full.min.js in the sheet_to_json function
+// until this becomes available as an argument
+// https://github.com/SheetJS/js-xlsx/issues/159
+// {row[hdr[C]] = "";continue;}
+
 (function() {
 
     var module = angular.module('app.dashboard');
@@ -76,45 +81,8 @@
                             
                             var workbook = XLSX.read(data, {type: 'binary', cellDates: true});
 
-                            /*
-                            workbook.SheetNames.forEach(function (sheetName) {
-                                // Get headers.
-                                var headers = [];
-                                var sheet = workbook.Sheets[sheetName];
-                                var range = XLSX.utils.decode_range(sheet['!ref']);
-                                var C, R = range.s.r;
-                                /* start in the first row */
-                                /* walk every column in the range */
-                                /*
-                                for (C = range.s.c; C <= range.e.c; ++C) {
-                                    var cell = sheet[XLSX.utils.encode_cell({c: C, r: R})];
-                                    /* find the cell in the first row */
-                                    /*
-                                    var hdr = 'No Value' + C; // <-- replace with your desired default
-                                    if (cell && cell.t) {
-                                        hdr = XLSX.utils.format_cell(cell);
-                                    }
-                                    headers.push(hdr);
-                                }
-                                // For each sheets, convert to json.
-                                var roa = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-                                if (roa.length > 0) {
-                                    roa.forEach(function (row) {
-                                        // Set empty cell to ''.
-                                        headers.forEach(function (hd) {
-                                            if (row[hd] == undefined) {
-                                                row[hd] = '';
-                                            }
-                                        });
-                                    });
-                                }
-
-                                console.log(roa);
-
-                            });*/
-
                             
-                            var jsonData = XLSX.utils.sheet_to_json( workbook.Sheets[workbook.SheetNames[0]]);
+                            var jsonData = XLSX.utils.sheet_to_json( workbook.Sheets[workbook.SheetNames[0]], { blankValue: null});
 
                             console.log(jsonData);
 
@@ -156,6 +124,13 @@
                                 headers.push({ name: i, type: type})
 
                             });
+                            
+                            // Post processing loop to create empty cells 
+                            /*for(var i = 0; i != jsonData.length; ++i) {
+                                for(var j = 0; j != jsonData[i].length; ++j) {
+                                    if(typeof jsonData[i][j] === 'undefined') jsonData[i][j] = "";
+                                }
+                            }*/
 
                             var spreadsheet = {
                                 dates: _.filter(headers, function(o) { return o.type == 'Date' }),
