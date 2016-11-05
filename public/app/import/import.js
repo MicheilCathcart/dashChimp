@@ -21,6 +21,15 @@
 
             $ctrl.spreadsheet = {};
 
+            $ctrl.spreadsheet.columns = ['Heading 1', 'Heading 2', 'Heading 3', 'Heading 4', 'Heading 5']
+
+            $ctrl.handsOnTableSettings = {
+                rowHeights: 15,
+                renderAllRows: true,
+                stretchH: "all",
+                startRows: 5
+            }
+
             $ctrl.upload = function(data) {
                 $scope.$apply(function () {
                     $ctrl.spreadsheet = data;

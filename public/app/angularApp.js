@@ -4,12 +4,13 @@ var app = angular.module("app", [
 	'app.dashboard',
 	'ui.router',
   'ngSanitize',
-	'ngAnimate'
+	'ngAnimate',
+	'ngHandsontable'
 ]);
 
 // Dependencies 
 angular.module('app.charts', []);
-angular.module('app.dashboard', ['ngSanitize']);
+angular.module('app.dashboard', ['ngSanitize', 'ngHandsontable']);
 
 // Config 
 

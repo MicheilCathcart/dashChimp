@@ -84,13 +84,10 @@
                     
                     reader.onload =function (event) {
 
-                            
-
                             var data = event.target.result;
                             
                             var workbook = XLSX.read(data, {type: 'binary', cellDates: true});
 
-                            
                             var jsonData = XLSX.utils.sheet_to_json( workbook.Sheets[workbook.SheetNames[0]], { blankValue: null});
 
                             var headerNames = XLSX.utils.sheet_to_json(
@@ -133,11 +130,10 @@
                                 } else {
                                     headers.push({ name: i, type: type})
                                 }
-                                
 
                             });
 
-                            
+                            // Check each header, if it is a format that needs changing, then change and re-save it.
 
                             _.each(headers, function(header, index) {
                                 if (header.type === "Currency" || header.type === "Number") {
@@ -157,15 +153,14 @@
                                 }
                             })
 
+                            // Prepare the spreadsheet object
+
                             var spreadsheet = {
                                 dates: _.filter(headers, function(o) { return o.type == 'Date' }),
                                 headers: headers,
+                                columns: _.map(headers, 'name'),
                                 data: jsonData
                             }
-
-                            console.log('jsonData');
-                            console.log(jsonData);
-
 
                             // Upload the Spreadsheet Data
                             ctrl.upload(spreadsheet);

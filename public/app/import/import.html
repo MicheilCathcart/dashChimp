@@ -1,8 +1,8 @@
-<div class="data-import">
+<div class="data-import" ng-class="{adjusted: showEdit}">
 
     <!-- Import Main Area -->
 
-    <div class="page-area" ng-class="{adjusted: showEdit}">
+    <div class="spreadsheet-area">
 
         Upload Excel Document
         <input style="margin-bottom:60px;" type="file" accept=".xls,.xlsx,.ods,.csv" file-read on-upload="$ctrl.upload(data)" multiple="false" />
@@ -12,6 +12,8 @@
         <button ng-repeat="date in $ctrl.spreadsheet.dates">{{ date.name }}</button>
         </div>
 
+        <!--
+
         <table style="margin-bottom:60px;">
             <tr>
                 <th ng-repeat="header in $ctrl.spreadsheet.headers">{{ header.name }}</th>
@@ -20,6 +22,18 @@
                 <th ng-repeat="cell in row track by $index">{{ cell }}</th>
             </tr>
         </table>
+
+        -->
+
+        <hot-table
+        col-headers="$ctrl.spreadsheet.columns"
+        datarows="$ctrl.spreadsheet.data"
+        settings="$ctrl.handsOnTableSettings"
+        min-spare-rows="10"
+        height="700"
+        width="700">
+        <hot-column ng-repeat="name in $ctrl.spreadsheet.columns" data="{{name}}"></hot-column>
+        </hot-table>
 
         <div class="bottom-right-menu">
             <img ng-click="$ctrl.pageClass='forward'" ui-sref="dashboard({movementType: 'forward'})" src="../images/view-icon.svg">
