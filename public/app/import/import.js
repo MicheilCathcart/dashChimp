@@ -25,7 +25,10 @@
 
             $ctrl.handsOnTableSettings = {
                 rowHeights: 15,
-                renderAllRows: true,
+                colWidths: 15,
+                //manualColumnResize: false,
+                //manualRowResize: false,
+                renderAllRows: false,
                 stretchH: "all",
                 startRows: 5
             }
