@@ -25,12 +25,26 @@
 
         -->
 
+                <table>
+            <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Format</th>
+            </thead>
+        <tr ng-repeat="header in $ctrl.spreadsheet.headers track by $index" data="{{ header.name }}" type="{{ header.type }}" date-format="{{ header.format }}">
+            <td>{{ header.name }}</td>
+            <td>{{ header.handsontype }}</td>
+            <td>{{ header.format }}</td>
+        </tr>
+        </table>
+
+
         <hot-table
         col-headers="$ctrl.spreadsheet.columns"
         datarows="$ctrl.spreadsheet.data"
         settings="$ctrl.handsOnTableSettings"
         min-spare-rows="10">
-        <hot-column ng-repeat="name in $ctrl.spreadsheet.columns" data="{{name}}" type="'date'"></hot-column>
+        <hot-column ng-repeat="header in $ctrl.spreadsheet.headers track by $index" data="{{ header.name }}" ></hot-column>
         </hot-table>
 
         <div class="bottom-right-menu">

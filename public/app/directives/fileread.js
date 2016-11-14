@@ -106,29 +106,35 @@
 
                                 if (!(isNaN(cell))) {
 
-                                    type = 'Number'
+                                    type = 'numeric'
 
                                 } else {
 
-                                type = 'String'
+                                type = 'string'
 
                                     var isDate = (isValidDate(cell));
 
                                     // Check whether is is a date
-                                    if (isDate.valid) type = 'Date';
+                                    if (isDate.valid) type = 'date';
 
                                     // Check whether is is a percentage
-                                    if (isPercentage(cell)) type = 'Percentage';
+                                    if (isPercentage(cell)) type = 'percentage';
 
                                     // Check whether is is a currency
-                                    if (isCurrency(cell)) type = 'Currency';
+                                    if (isCurrency(cell)) type = 'currency';
 
                                 }
 
-                                if ( type === 'Date') {
-                                    headers.push({ name: i, type: type, format: isDate.format })
-                                } else {
-                                    headers.push({ name: i, type: type})
+                                if ( type === 'date') {
+                                    headers.push({ name: i, type: type, handsontype: type, format: isDate.format })
+                                } else if ( type === 'numeric') {
+                                    headers.push({ name: i, type: type, handsontype: type, format: '0.00'})
+                                } else if ( type === 'percentage') {
+                                    headers.push({ name: i, type: type, handsontype: 'numeric', format: '0.00%'})
+                                } else if ( type === 'currency') {
+                                    headers.push({ name: i, type: type, handsontype: 'numeric', format: '$0.00'})
+                                } else if ( type === 'string') {
+                                    headers.push({ name: i, type: type, handsontype: '', format: ''})
                                 }
 
                             });
@@ -136,17 +142,17 @@
                             // Check each header, if it is a format that needs changing, then change and re-save it.
 
                             _.each(headers, function(header, index) {
-                                if (header.type === "Currency" || header.type === "Number") {
+                                if (header.type === "currency" || header.type === "numeric") {
                                     _.each(jsonData, function(row) { 
                                         row[header.name] = Number(row[header.name].replace(/[^0-9\.]+/g,""));
                                     })
                                 }
-                                if (header.type === "Percentage") {
+                                if (header.type === "percentage") {
                                     _.each(jsonData, function(row) { 
                                         row[header.name] = Number(row[header.name].replace(/[^0-9\.]+/g,"")) / 100;
                                     })
                                 }
-                                if (header.type === "Date") {
+                                if (header.type === "date") {
                                     _.each(jsonData, function(row) { 
                                         row[header.name] = moment(row[header.name], header.format);
                                     })
@@ -156,11 +162,13 @@
                             // Prepare the spreadsheet object
 
                             var spreadsheet = {
-                                dates: _.filter(headers, function(o) { return o.type == 'Date' }),
-                                headers: headers,
                                 columns: _.map(headers, 'name'),
+                                dates: _.filter(headers, function(o) { return o.type == 'date' }),
+                                headers: headers,
                                 data: jsonData
                             }
+
+                            console.log('jsonData');
 
                             // Upload the Spreadsheet Data
                             ctrl.upload(spreadsheet);

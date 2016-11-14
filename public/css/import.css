@@ -1,3 +1,209 @@
+/* Vertical Align */
 .data-import {
   height: auto;
   width: 100%; }
+
+.handsontable th, .handsontable td {
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right: 1px solid rgba(141, 102, 71, 0.2);
+  border-bottom: 1px solid rgba(141, 102, 71, 0.2);
+  height: 22px;
+  empty-cells: show;
+  line-height: 21px;
+  padding: 0 4px 0 4px;
+  background-color: #f1f1f0;
+  vertical-align: middle;
+  overflow: hidden;
+  outline-width: 0;
+  white-space: pre-line; }
+
+.handsontable th:first-child, .handsontable td:first-of-type, .handsontable .htNoFrame + th, .handsontable .htNoFrame + td {
+  border-left: 1px solid rgba(141, 102, 71, 0.2); }
+
+.handsontable tr:first-child th, .handsontable tr:first-child td {
+  border-top: 1px solid rgba(141, 102, 71, 0.2); }
+
+.handsontableInput {
+  border: none;
+  outline-width: 0;
+  margin: 0;
+  padding: 1px 5px 0 5px;
+  font-family: inherit;
+  line-height: 21px;
+  font-size: inherit;
+  box-shadow: 0 0 0 2px #8D6647 inset;
+  resize: none;
+  display: inline-block;
+  color: #8D6647;
+  border-radius: 0;
+  background-color: #FFF; }
+
+.wtBorder.current, .wtBorder.area {
+  background-color: #8D6647 !important; }
+
+.handsontable td.area {
+  background: rgba(141, 102, 71, 0.1); }
+
+.htCore tr th, .htCore tr th.ht__highlight {
+  color: white;
+  text-transform: uppercase; }
+
+.handsontable.ht__selection--columns thead th.ht__highlight, .handsontable.ht__selection--rows tbody th.ht__highlight {
+  color: white; }
+
+.htCore tr th:nth-child(1) {
+  background-color: #40B5C9; }
+
+.htCore tr th:nth-child(1).ht__highlight {
+  background-color: #35a7bb; }
+
+.htCore tr th:nth-child(2) {
+  background-color: #B1CE1C; }
+
+.htCore tr th:nth-child(2).ht__highlight {
+  background-color: #9eb819; }
+
+.htCore tr th:nth-child(3) {
+  background-color: #F9644C; }
+
+.htCore tr th:nth-child(3).ht__highlight {
+  background-color: #f84f33; }
+
+.htCore tr th:nth-child(4) {
+  background-color: #ECE348; }
+
+.htCore tr th:nth-child(4).ht__highlight {
+  background-color: #eadf31; }
+
+.htCore tr th:nth-child(5) {
+  background-color: #F9994C; }
+
+.htCore tr th:nth-child(5).ht__highlight {
+  background-color: #f88b33; }
+
+.htCore tr th:nth-child(6) {
+  background-color: #54bdcf; }
+
+.htCore tr th:nth-child(6).ht__highlight {
+  background-color: #40b5c9; }
+
+.htCore tr th:nth-child(7) {
+  background-color: #c2e122; }
+
+.htCore tr th:nth-child(7).ht__highlight {
+  background-color: #b1ce1c; }
+
+.htCore tr th:nth-child(8) {
+  background-color: #fa7965; }
+
+.htCore tr th:nth-child(8).ht__highlight {
+  background-color: #f9644c; }
+
+.htCore tr th:nth-child(9) {
+  background-color: #eee75f; }
+
+.htCore tr th:nth-child(9).ht__highlight {
+  background-color: #ece348; }
+
+.htCore tr th:nth-child(10) {
+  background-color: #faa765; }
+
+.htCore tr th:nth-child(10).ht__highlight {
+  background-color: #f9994c; }
+
+.htCore tr th:nth-child(11) {
+  background-color: #68c4d4; }
+
+.htCore tr th:nth-child(11).ht__highlight {
+  background-color: #54bdcf; }
+
+.htCore tr th:nth-child(12) {
+  background-color: #c8e439; }
+
+.htCore tr th:nth-child(12).ht__highlight {
+  background-color: #c2e122; }
+
+.htCore tr th:nth-child(13) {
+  background-color: #fb8f7d; }
+
+.htCore tr th:nth-child(13).ht__highlight {
+  background-color: #fa7965; }
+
+.htCore tr th:nth-child(14) {
+  background-color: #f1ea76; }
+
+.htCore tr th:nth-child(14).ht__highlight {
+  background-color: #eee75f; }
+
+.htCore tr th:nth-child(15) {
+  background-color: #fbb57d; }
+
+.htCore tr th:nth-child(15).ht__highlight {
+  background-color: #faa765; }
+
+.htCore tr th:nth-child(16) {
+  background-color: #7cccda; }
+
+.htCore tr th:nth-child(16).ht__highlight {
+  background-color: #68c4d4; }
+
+.htCore tr th:nth-child(17) {
+  background-color: #cee74f; }
+
+.htCore tr th:nth-child(17).ht__highlight {
+  background-color: #c8e439; }
+
+.htCore tr th:nth-child(18) {
+  background-color: #fba496; }
+
+.htCore tr th:nth-child(18).ht__highlight {
+  background-color: #fb8f7d; }
+
+.htCore tr th:nth-child(19) {
+  background-color: #f3ee8d; }
+
+.htCore tr th:nth-child(19).ht__highlight {
+  background-color: #f1ea76; }
+
+.htCore tr th:nth-child(20) {
+  background-color: #fbc396; }
+
+.htCore tr th:nth-child(20).ht__highlight {
+  background-color: #fbb57d; }
+
+.htCore tr th:nth-child(21) {
+  background-color: #90d4df; }
+
+.htCore tr th:nth-child(21).ht__highlight {
+  background-color: #7cccda; }
+
+.htCore tr th:nth-child(22) {
+  background-color: #d5ea66; }
+
+.htCore tr th:nth-child(22).ht__highlight {
+  background-color: #cee74f; }
+
+.htCore tr th:nth-child(23) {
+  background-color: #fcb9af; }
+
+.htCore tr th:nth-child(23).ht__highlight {
+  background-color: #fba496; }
+
+.htCore tr th:nth-child(24) {
+  background-color: #f6f1a4; }
+
+.htCore tr th:nth-child(24).ht__highlight {
+  background-color: #f3ee8d; }
+
+.htCore tr th:nth-child(25) {
+  background-color: #fcd1af; }
+
+.htCore tr th:nth-child(25).ht__highlight {
+  background-color: #fbc396; }
+
+.htCore tr th:nth-child(26) {
+  background-color: #a3dce5; }
+
+.htCore tr th:nth-child(26).ht__highlight {
+  background-color: #90d4df; }

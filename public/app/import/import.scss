@@ -1,4 +1,76 @@
+// Imports
+
+@import '../scss/variables';
+@import '../scss/mixins';
+
 .data-import {
     height:auto;
     width: 100%;
+}
+
+.handsontable th, .handsontable td {
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right: 1px solid rgba(141,102,71,0.2);
+    border-bottom: 1px solid rgba(141,102,71,0.2);
+    height: 22px;
+    empty-cells: show;
+    line-height: 21px;
+    padding: 0 4px 0 4px;
+    background-color: #f1f1f0;
+    vertical-align: middle;
+    overflow: hidden;
+    outline-width: 0;
+    white-space: pre-line;
+}
+
+.handsontable th:first-child, .handsontable td:first-of-type, .handsontable .htNoFrame + th, .handsontable .htNoFrame + td {
+    border-left: 1px solid rgba(141,102,71,0.2);
+}
+
+.handsontable tr:first-child th, .handsontable tr:first-child td {
+    border-top: 1px solid rgba(141,102,71,0.2);
+}
+
+.handsontableInput {
+    border: none;
+    outline-width: 0;
+    margin: 0;
+    padding: 1px 5px 0 5px;
+    font-family: inherit;
+    line-height: 21px;
+    font-size: inherit;
+    box-shadow: 0 0 0 2px #8D6647 inset;
+    resize: none;
+    display: inline-block;
+    color: #8D6647;
+    border-radius: 0;
+    background-color: #FFF;
+}
+
+.wtBorder.current, .wtBorder.area {
+    background-color: #8D6647 !important;
+}
+
+.handsontable td.area {
+    background: rgba(141,102,71,0.1);
+}
+
+.htCore tr th, .htCore tr th.ht__highlight {
+    color: white;
+    text-transform: uppercase;
+}
+
+.handsontable.ht__selection--columns thead th.ht__highlight, .handsontable.ht__selection--rows tbody th.ht__highlight {
+    color: white;
+}
+
+@for $i from 1 through length($graphColours) { 
+    $colour: nth($graphColours, $i);
+    .htCore tr th:nth-child(#{$i}) {
+        background-color: $colour;
+    }
+    .htCore tr th:nth-child(#{$i}).ht__highlight {
+        background-color: darken($colour,5);
+    }
 }
