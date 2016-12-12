@@ -10,10 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.3.4",
+    "body-parser": "^1.15.2",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-nodemon": "^2.0.4",
+    "handsontable": "^0.29.0",
     "ng-handsontable": "^0.13.0",
-    "pg-promise": "^3.2.3"
+    "pg": "^6.1.1",
+    "pg-promise": "^3.2.3",
+    "xlsx": "^0.8.0"
   }
 }
