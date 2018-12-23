@@ -1,0 +1,1 @@
+Type gulp to start running the project. Currently only works using node 6.11.5 so you have to run nvm use 6.11.5 before running gulp. 
